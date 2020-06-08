@@ -1,0 +1,232 @@
+<view class="">
+
+
+  <!-- card -->
+  <view class="card ">
+    <!-- -->
+    <view class="card_container " style="height: {{(windowWidth - windowWidth/5) * 0.618 }}rpx">
+      <view class="card_left">
+        <!-- 1， logo_begin -->
+        <view class="logo flex-row" bindtap="toCaidiPage">
+          <view class=" flex-column">
+            <text class="area_name">CaiDi</text>
+            <text class="smallBlack">{{userInfo.nxCommunityEntity.nxCommunityName}}</text>
+          </view>
+        </view>
+
+        <!--2， member_begin -->
+        <view class="member flex-row" bindtap="toUserPage">
+          <text>{{userInfo.nxCustomerUserEntity.nxCuWxNickName}} </text>
+          <text>></text>
+        </view>
+        <!--3， points_begin -->
+        <view class="points flex-row">
+          <view class="points_total" bindtap="toAllOrders">
+            <text class="">我的积分 </text>
+            <text class="">></text>
+          </view>
+        </view>
+      </view>
+
+      <view class="card_right">
+        <image class="card_right_img" src="../../images/cd.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- ./card -->
+
+
+
+
+  <!--  -->
+
+  <!-- <view class="my flex-row-around with-padding margin-bottom">
+        <view class="my_item">
+          <image src="../../images/teji1.jpg" style="width:{{(windowWidth - 80)/2}}rpx; height: 200rpx;"> </image>
+          <view class="flex-row-between with-lr-padding">
+            <text class="smallBlack">我的订单</text>
+            <text>></text>
+          </view>
+        </view>
+
+        <view class="my_item">
+          <image src="../../images/teji1.jpg" style="width:{{(windowWidth - 80)/2}}rpx;height: 200rpx;"> </image>
+          <view class="flex-row-between with-lr-padding">
+            <text class="smallBlack">我买过的</text>
+            <text>></text>
+          </view>
+
+        </view>
+
+      </view> -->
+
+  <!-- 。/ -->
+
+
+<view class="with-padding">
+
+
+  <!--  -->
+  <view class="flex-column margin_bottom">
+    <view class="flex-row-between whiteBack with-padding with-border-bottom">
+      <text>我的订单</text>
+      <text>></text>
+    </view>
+    <view class="flex-row-between whiteBack with-padding ">
+      <text>我买过的</text>
+      <text>></text>
+    </view>
+  </view>
+
+  <!-- 。/ -->
+
+
+  <!-- 中间 -->
+
+  <view class="flex-row-between whiteBack">
+    <view class="with-padding">
+      <text class="weight_five">推荐菜单</text>
+    </view>
+    <view>
+      <text class="all_caidan">全部菜单</text>
+    </view>
+  </view>
+  <view class="with-padding whiteBack">
+    <scroll-view scroll-x="true" class="third_scroll">
+     <view class="flex-row">
+        <view class="history flex-column with-padding margin-right">
+          <view class="small">高蛋白</view>
+          <view class="smallGray">收藏: 23</view>
+          <view class="smallGray"></view>
+        </view>
+
+
+        <view class="history flex-column with-padding margin-right">
+          <view class="date middle">4月15日</view>
+          <view class="normal">星期三</view>
+          <view class="small">下午18:00送达</view>
+        </view>
+
+        <view class="history flex-column with-padding margin-right">
+          <view class="date middle">4月15日</view>
+          <view class="normal">星期三</view>
+          <view class="small">下午18:00送达</view>
+        </view>
+
+        <view class="history flex-column with-padding margin-right">
+          <view class="date middle">4月15日</view>
+          <view class="normal">星期三</view>
+          <view class="small">下午18:00送达</view>
+        </view>
+
+        <view class="history flex-column with-padding margin-right">
+          <view class="date middle">4月15日</view>
+          <view class="normal">星期三</view>
+          <view class="small">下午18:00送达</view>
+        </view>
+
+        <view class="history flex-column with-padding margin-right">
+          <view class="date middle">4月15日</view>
+          <view class="normal">星期三</view>
+          <view class="small">下午18:00送达</view>
+        </view>
+
+      </view>
+
+    </scroll-view>
+    <!--  -->
+
+  </view>
+  <!-- ./zuijinmaiguo -->
+
+
+  <view class="">
+    <!--  创建的模版 -->
+    <view class="flex-row-between whiteBack">
+      <view class="apply-total with-padding flex-row" bindtap="clickShowWeighUser" hover-class="hover">
+        <text class="weight_five">我的菜单</text>
+      </view>
+      <view class="text-lg right text-weight-500" bindtap="addPickFirstStep" hover-class="hover">:</view>
+    </view>
+
+    <view class="whiteBack">
+      <!--  -->
+      <view class=" flex-column with-padding">
+        <view class="flex-row margin_bottom" bindtap="toTemplateDetail" wx:for="{{templateArr}}" wx:for-item="one" data-id="{{one.nxOrderTemplateId}}">
+          <image class="one-img" src="{{url + one.nxOdFilePath}}"></image>
+          <view class="goods_name  with-padding">
+            <view class="cate_name flex-column">
+              <text class="cate_content">{{one.nxOdName}}</text>
+              <text class="explain-words">{{one.nxOdItemAmount}}</text>
+            </view>
+          </view>
+        </view>
+
+        <navigator url="../addTemplate/addTemplate">
+          <view class="onePage flex-row">
+            <view class="addModel">
+              +
+            </view>
+            <view class="goods_name with-padding">
+              <text class="cate_content">添加菜单</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <!--  -->
+
+    </view>
+    <!-- ./模版 -->
+
+
+
+  </view>
+
+  <!-- 。/我的菜单 -->
+
+  <!-- 收藏 -->
+
+  <view class="">
+    <!--  创建的模版 -->
+    <view class="flex-row-between whiteBack">
+      <view class="apply-total with-padding flex-row" bindtap="clickShowWeighUser" hover-class="hover">
+        <text class="weight_five">收藏菜单</text>
+      </view>
+      <view class="text-lg right text-weight-500" bindtap="addPickFirstStep" hover-class="hover">:</view>
+    </view>
+
+    <view class="whiteBack">
+      <!--  -->
+      <view class=" flex-column with-padding">
+
+        <view class=" flex-row" bindtap="toTemplateDetail" wx:for="{{templateArr}}" wx:for-item="one" data-id="{{one.nxOrderTemplateId}}">
+          <image class="one-img" src="{{url + one.nxOdFilePath}}"></image>
+          <view class="goods_name  with-padding">
+            <view class="cate_name flex-column">
+              <text class="cate_content">{{one.nxOdName}}</text>
+              <text class="explain-words">{{one.nxOdItemAmount}}</text>
+            </view>
+          </view>
+        </view>
+
+
+
+
+
+
+      </view>
+
+    </view>
+
+  </view>
+
+  <!-- 。/收藏 -->
+
+</view>
+
+
+
+
+
+
+</view>

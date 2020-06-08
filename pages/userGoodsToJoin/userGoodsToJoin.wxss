@@ -1,0 +1,113 @@
+/* pages/saleGoods/saleGoods.wxss */
+
+.top-image{
+  width: 100%;
+  height: 400rpx;
+}
+
+.nutritional{
+  display: inline-flex;
+}
+.nutritional-one{
+white-space:nowrap;
+
+}
+.nutritional-two{
+}
+
+
+/* ===== */
+
+.card {
+  padding: 20rpx 60rpx 20rpx 60rpx;
+  /* background: red; */
+}
+
+.card_container {
+  width: 100%;
+  border-radius: 15rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  background: #fff;
+   border: 1px solid #81818125;
+  box-shadow: 0 4rpx 2rpx 2rpx rgba(0, 0, 0, 0.2);
+}
+
+.card_left {
+  width: 60%;
+  display: flex;
+  flex-flow: column nowrap;
+  /* background: yellow; */
+  padding: 20rpx 0;
+  
+  
+  
+}
+
+.area_name {
+  color: #1a575c;
+  font-weight: 600;
+  font-style: italic;
+}
+.card_right{
+  width: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-content: flex-end;
+  padding-left: 20rpx;
+  padding-bottom: 20rpx; 
+ 
+
+  /* background: blue; */
+}
+
+.card_right_img {
+  width: 100%; 
+  height: 50%;
+
+  /* height: 160rpx; */
+  
+  /* margin-top: 80rpx; */
+
+}
+
+.logo{
+  /* background: red; */
+  flex-basis: 33%;
+}
+.member {
+ 
+  /* background: rgb(236, 175, 185); */
+  flex-basis: 33%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-content: flex-end;
+  justify-items: center;
+  align-items: center;
+  padding-right: 40rpx;
+
+}
+
+.points {
+  /* background: blue; */
+   flex-basis: 33%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-content: flex-end;
+  justify-items: center;
+  align-items: center;
+  padding-right: 40rpx;
+}
+.points_btn{
+  font-size: 30rpx;
+  /* width: 220rpx; */
+  border-radius: 30rpx;
+  /* line-height: 60rpx; */
+  background: #fb0;
+  color: rgba(0, 0, 0, 0.932);
+  text-align: center;
+  padding: 10rpx 20rpx;
+}

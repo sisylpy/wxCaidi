@@ -1,0 +1,134 @@
+/* one */
+
+.orderBackOne {
+  background: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.one_row_one {
+  flex-basis: 45%;
+}
+
+.second_row_one {
+  flex-basis: 45%;
+  /* background: red; */
+  display: flex;
+  flex-flow: column nowrap;
+  /* align-items: center; *//* align-content: center; *//* justify-content: center; *//* justify-items:  center; */
+}
+
+.second_row_img {
+  /* border: 1px solid pink; */
+}
+
+.all {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  line-height: 100rpx;
+  margin-right: 30rpx;
+
+}
+
+.sel_icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.third_row_one {
+  /* flex-basis: 10%; */
+  /* background: pink; */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+   
+
+
+}
+
+.third_row_content_one {
+  display: flex;
+  flex-flow: row nowrap;
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+  border: 1px solid lightgray;
+  border-bottom: none;
+  /* background: yellow; */
+  line-height: 60rpx;
+  height: 60rpx;
+}
+
+.third-left {
+  flex-basis: 48%;
+  display: flex;
+  flex-flow: row nowrap;
+  
+
+
+  /* background: green; */
+}
+.left-words{
+  flex-basis: 50%;
+  /* background: blue; */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.left-price{
+  flex-basis: 50%;
+  /* background: red; */
+}
+
+.third-middle {
+  flex-basis: 2%;
+  /* background: yellow; */
+}
+
+.third-right {
+  flex-basis: 45%;
+  /* background: rebeccapurple; */
+}
+
+.option_item {
+  line-height: 80rpx;
+  width: 80rpx;
+  /* background: red; */
+  text-align: center;
+  font-size: 44rpx;
+}
+
+.options_number {
+  /* padding:  0 10rpx; */
+  font-size: 38rpx;
+  width: 50rpx;
+  text-align: center;
+}
+
+.split {
+  width: 1px;
+  background: lightgray;
+  height: 55rpx;
+  margin-top: 2rpx;
+}
+
+.gouwuche {
+  background: #000;
+  color: #fff;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+.bbb{
+  /* height: 300rpx; */
+  /* background: blue; */
+  position: fixed;
+  left: 0;
+  right: 0;
+}

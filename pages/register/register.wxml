@@ -1,0 +1,93 @@
+<!-- top -->
+<view class="top-back flex-column-center">
+  <view class="top-words flex-row">
+    <text class="words-one">干净</text>
+    <text class="words-one with-lr-padding">便宜</text>
+    <text class="m_is_active">新鲜</text>
+  </view>
+  <image class="top-img" src="/images/back.png" mode="center"></image>
+</view>
+<!-- ./top -->
+
+<!-- 表格部分 -->
+<view class="with-padding">
+  <!-- address -->
+  <view class="address flex-column">
+
+    <view class="flex-row">
+      <text class="reg-explain">送货地址</text>
+      <view class="input-row flex-row">
+     
+        <view class="section">
+          <input class="buildingInput" type="text" placeholder-style='color:#9a9a9a;'  bindinput="bindKeyInput" value="{{customer.nxCustomerAddress}}"/>
+          <!--  bindtap="selectCommunity" -->
+          <scroll-view scroll-y class="sug_info result {{showSug ? 'is-active' : ''}}" >
+            <view class="result-row "   bindtap="clickCommunity"
+            wx:for="{{sugData}}" wx:for-item="item" wx:key="uid" data-location="{{item.location}}" data-name="{{item.name}}"
+            >
+              {{item.name}}
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+
+    <view class="flex-row">
+      <!-- <text class="reg-explain">门牌号</text> -->
+      <view class="input-row flex-row">
+        <view class="section">
+          <input class="buildingInput" type="text" placeholder="请填写楼号-门牌号" placeholder-style='color:#9a9a9a;' value="{{customer.nxCustomerDeatilAddress}}" bindinput="bindAddressInput" ></input>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- person -->
+  <view class="address flex-column">
+    <view class="flex-row">
+      <text class="reg-explain">联系人</text>
+      <view class="input-row flex-row">
+        <input class="buildingInput" type="text" placeholder="姓名" placeholder-style='color:#9a9a9a;' value="{{userInfo.nxCustomerName}}" bindinput="bindNameInput" ></input>
+      </view>
+    </view>
+    <view class="flex-row">
+      <view class="input-row  third-row flex-row">
+        <text class="btn {{customer.nxCustomerCall == 1 ? 'is-active' : ''}} " bindtap="selectCall" data-call="1">女士</text>
+        <text class="btn  {{customer.nxCustomerCall == 2 ? 'is-active' : ''}}" bindtap="selectCall" data-call="2">先生</text>
+      </view>
+    </view>
+  </view>
+  <!-- ./person -->
+
+  <!-- phone -->
+  <view class="address flex-column">
+    <view class="flex-row">
+      <text class="reg-explain">电话</text>
+      <view class="input-row">
+        <input class="buildingInput" type="number" placeholder="手机号" placeholder-style='color:#9a9a9a;' value="{{userInfo.nxCustomerPhone}}"  bindfocus="getDigitHeight" bindblur="getPhone" bindinput="inputPhone" ></input>
+      </view>
+    </view>
+     <view class="flex-row">
+      <text class="reg-explain"></text>
+      <view class="input-row">
+       <text class="red">{{tishi}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 登陆按钮 -->
+  <block wx:if="{{canLogin}}">
+    <view class="btn">
+      <button class="saveAddress is-active" open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain='true'>授权微信登录</button>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="btn">
+      <button class="saveAddress " plain='true'>授权微信登录</button>
+    </view>
+  </block>
+  <!-- ./登陆按钮 -->
+
+</view>

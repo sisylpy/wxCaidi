@@ -1,0 +1,152 @@
+
+page{
+    background: #f5f5f5;
+
+}
+.sction{
+  margin-bottom: 20rpx;
+}
+.top{
+  margin-top: 20rpx;
+  /* padding: 0 20rpx; */
+}
+.top-status{
+  width: 80%;
+  /* background: blue; */
+  margin-left: 20%;
+}
+.status-item{
+ /* background: red; */
+ flex-basis: 32%;
+}
+
+.status-words{
+  height: 60rpx;
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+  /* background: blue; */
+}
+.status-img{
+  height: 40rpx;
+  /* background: pink; */
+  position: relative;
+}
+
+.smallGray.is-active{
+  color: rgb(255, 196, 0);
+
+}
+.smallGray.is-finished{
+  color: #000;
+}
+.order-status-finished{
+  width: 16rpx;
+  height: 16rpx;
+  /* border: 1rpx solid rgb(255, 196, 0); */
+  background: rgb(255, 196, 0);
+  border-radius: 50%;
+  display: none;
+  margin-top: -8rpx;
+
+}
+
+.order-status-finished.is-active{
+  display: block;
+}
+.order-status-doing{
+  display: none;
+  margin-top: -15rpx;
+}
+.order-status-doing.is-active{
+  display: block;
+}
+.out{
+  width: 30rpx;
+  height: 30rpx;
+  border: 1rpx solid rgb(255, 196, 0);
+  background: #fff;
+  border-radius: 50%;
+}
+.inner{
+   width: 24rpx;
+  height: 24rpx;
+  /* border: 1rpx solid rgb(255, 196, 0); */
+  background: rgb(255, 196, 0);
+    border-radius: 50%;
+}
+.order-status-waiting{
+  width: 16rpx;
+  height: 16rpx;
+  border: 1rpx solid rgb(255, 196, 0);
+  background: #fff;
+  border-radius: 50%;
+  display: none;
+  margin-top: -8rpx;
+
+}
+.order-status-waiting.is-active{
+  display: block;
+}
+.status-line{
+  height: 4rpx;
+  background: lightgray;
+  width: 100%;
+  position: relative;
+  margin-top: -10rpx;
+}
+.status-line.is-active{
+  background: rgb(255, 196, 0 );
+
+}
+status-line-none{
+  background: #fff;
+}
+
+
+/*  */
+
+.row-left{
+  flex-basis: 25%;
+/* background: blue; */
+}
+.row-right{
+  flex-basis: 75%;
+  /* background: yellow; */
+
+}
+
+.goods-name{
+  flex-basis: 50%;
+/* background: green; */
+}
+.goods-amount{
+  flex-basis: 30%;
+  /* background: blue; */
+}
+.goods-subTotal{
+  flex-basis: 20%;
+  
+   display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: flex-end;
+  
+}
+.cancle-btn{
+  display: none;
+}
+.cancle-btn.is-active{
+  display: block;
+}
+.btn{
+  background: rgb(36, 36, 36);
+  color: rgb(255, 196, 0);
+  padding: 15rpx 45rpx;
+  text-align: center;
+  font-size: 32rpx;
+border-radius: 10rpx;
+margin-top: 20rpx;
+margin-bottom: 20rpx;
+}
+

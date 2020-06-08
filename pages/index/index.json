@@ -1,0 +1,9 @@
+{
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "carPage": "/components/carPage/carPage"
+  }
+}

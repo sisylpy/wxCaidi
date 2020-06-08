@@ -1,0 +1,155 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.11.0",
+	"appid": "wx87baf9dcf935518a",
+	"projectname": "caidi",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"query": "nxCommunityId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/ordersDetailPage/ordersDetailPage",
+					"pathName": "pages/ordersDetailPage/ordersDetailPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/customerInfo/customerInfo",
+					"pathName": "pages/customerInfo/customerInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/order/order",
+					"pathName": "pages/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/userPage/userPage",
+					"pathName": "pages/userPage/userPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/userGoodsPage/userGoodsPage",
+					"pathName": "pages/userGoodsPage/userGoodsPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/userGoodsToJoin/userGoodsToJoin",
+					"pathName": "pages/userGoodsToJoin/userGoodsToJoin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addTemplate/addTemplate",
+					"pathName": "pages/addTemplate/addTemplate",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/templatesPage/templatesPage",
+					"pathName": "pages/templatesPage/templatesPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/templateDetail/templateDetail",
+					"pathName": "pages/templateDetail/templateDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "pages/sign/sign",
+					"pathName": "pages/sign/sign",
+					"query": "fatherId=111",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/saleGoods/saleGoods",
+					"pathName": "pages/saleGoods/saleGoods",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

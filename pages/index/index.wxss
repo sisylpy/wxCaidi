@@ -1,0 +1,224 @@
+/* ====== */
+
+.index_back {
+  background: #f5f5f5;
+}
+
+.swiper {
+  margin-top: 20rpx;
+}
+
+.swiper_item {
+  border-radius: 10rpx;
+}
+
+.swiper_img {
+  border-radius: 10rpx;
+}
+
+/* picker */
+
+.top {
+  background: blue;
+}
+
+.top_content {
+  background: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding: 10rpx 10rpx;
+}
+
+.userTime {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  /* background: yellow; */
+}
+
+.face {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.face_name {
+  font-size: 22rpx;
+  padding-top: 4rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.wx_name {
+  font-size: 30rpx;
+}
+
+.appointment {
+  border: 1px solid rgba(194, 192, 192, 0.5);
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  padding: 10rpx 20rpx;
+}
+
+.split {
+  width: 2rpx;
+  height: 80rpx;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+  background: rgba(172, 171, 171, 0.562);
+}
+
+/* 商品类别 */
+
+.whole {
+  /* margin-top: 40rpx; *//* background: #fff; */
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.whole_content {
+  padding-bottom: 150rpx;
+}
+
+.one {
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  /* height: 480rpx; */
+  background: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.one-img {
+  height: 380rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.fatherName {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+  /* justify-content: space-around; */
+}
+
+.is-active {
+  margin-top: -100rpx;
+  background: rgba(0, 0, 0, 0.253);
+  color: #fff;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 30rpx solid #fff;
+  margin-top: -20rpx;
+  margin-left: 40rpx;
+}
+
+.triangle.is-active {
+}
+
+.goods_name {
+  line-height: 100rpx;
+  padding-left: 20rpx;
+  font-size: 40rpx;
+  font-weight: 300;
+}
+
+.cata_btn {
+  padding: 10rpx 20rpx;
+  background: rgb(255, 174, 0);
+  color: rgba(0, 0, 0, 0.76);
+  border-radius: 35rpx;
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+
+.explain-words-red {
+  font-size: 30rpx;
+  color: red;
+}
+
+/*  */
+
+.sale {
+  padding: 20rpx;
+}
+
+.one-sale {
+  background: #fff;
+  border-radius: 10rpx;
+  /* border: 1px solid red; */
+  box-shadow: 0 4rpx 2rpx 2rpx rgba(0, 0, 0, 0.2);
+}
+
+.one-img-sale {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  height: 200rpx;
+}
+
+.cate_name {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 30rpx;
+  align-items: baseline;
+  justify-content: space-between;
+  /* color: #fff; */
+}
+
+.cate_money {
+  font-size: 28rpx;
+  color: gray;
+}
+
+.cate_content {
+  /* background: red; */
+  margin-left: 6rpx;
+  font-size: 30rpx;
+}
+
+.cate-explain {
+  font-size: 24rpx;
+  background: rgb(255, 174, 0);
+  border-radius: 10rpx;
+  padding: 4rpx 6rpx;
+  color: gray;
+}
+
+.cate_yuan {
+  font-size: 26rpx;
+  color: rgb(85, 85, 85);
+  text-decoration: line-through;
+  /* background: green; */
+}
+
+.cate-profit {
+  font-size: 28rpx;
+  color: rgb(77, 76, 76);
+}
+
+.addCar {
+  background: rgb(34, 34, 34);
+  color: rgba(255, 208, 0, 0.829);
+  font-size: 26rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+/*  */
+
+/*  */
+@import "/template/car/car.wxss";

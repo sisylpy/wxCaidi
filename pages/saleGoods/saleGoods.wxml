@@ -1,0 +1,99 @@
+<view class="customerPage">
+<!-- first -->
+  <view class="row whiteBack">
+    <image class="top-image" src="{{url + promote.nxPromoteFilePath}}"></image>
+    <view class="flex-column with-lr-padding with-border-bottom">
+       <view class="flex-row-between with-tb-padding">
+       <text class="">{{promote.nxCommunityGoodsEntity.nxCgGoodsName}}</text>
+       <text>¥ {{promote.nxPromotePrice}}元/{{promote.nxPromoteStandard}}</text>
+       </view>
+
+       <view class="flex-row-between margin_bottom">
+       <view>
+       <text>今日热销</text>
+        <text class="">{{promote.nxCommunityGoodsEntity.nxCgGoodsName}}</text>
+       </view>
+       <text>¥ 33.00元/斤</text>
+       </view>
+    </view>
+  </view>
+  <!-- ./first -->
+
+<!-- second -->
+
+<view class="flex-column with-padding whiteBack margin_bottom ">
+  <view class="flex-row margin_bottom">
+    <text class="margin-l-right">净含量:</text>
+    <text>1公斤</text>
+  </view>
+
+   <view class="flex-row margin_bottom">
+    <text class="margin-l-right">保质期:</text>
+    <text>3个月</text>
+  </view>
+
+   <view class="flex-row margin_bottom">
+    <text class="margin-l-right">储存条件:</text>
+    <text>深冷、冷冻-18度</text>
+  </view>
+
+  <view class="nutritional margin_bottom">
+    <view class="nutritional-one margin-l-right">营养成份:</view>
+    <view class="nutritional-two">{{promote.nxPromoteWords}}</view>
+  </view>
+
+</view>
+
+<!-- ./second -->
+
+<!-- third -->
+
+<view class="whiteBack with-padding">
+  <view>
+    <text>为您推荐</text>
+  </view>
+
+
+<!--  -->
+ <view class="father">      
+      <view class="one_goods" style="background: {{item.nxOtDisGoodsColor}}"  wx:for="{{itemArr}}" wx:key="nxCommunityGoodsId" bindtap="showGoodsPage" wx:for-item="item"  data-id="{{item.nxCommunityGoodsId}}" data-name="{{item.nxGoodsEntity.nxGoodsName}}" data-index="{{index}}" data-type="{{item.nxCgGoodsSellType}}">
+  
+        <view class="goods_name {{item.isSelected ? 'is-active': ''}}">{{item.nxCommunityGoodsEntity.nxGoodsEntity.nxGoodsName}}</view>
+        <view class="goods_price">
+          <view class="money">¥</view>
+          <view class="big">{{item.nxCommunityGoodsEntity.nxCgGoodsPrice}}</view>
+          <view class="small">.{{item.nxCommunityGoodsEntity.nxCgGoodsPriceDecimal}}</view>
+          <view class="starndard">/{{item.nxGoodsEntity.nxGoodsStandardname}}</view>
+        </view>
+        <view class="options  {{item.isSelected ? 'hidden' : ''}}" data-index="{{index}}" data-name="{{item.nxGoodsEntity.nxGoodsName}}" data-id="{{item.nxGoodsEntity.nxGoodsId}}" data-item="{{item}}" data-standard="{{item.nxGoodsEntity.nxGoodsStandardname}}">
+          <view class="place">
+            <text class="place-words">{{item.nxCommunityGoodsEntity.nxGoodsEntity.nxGoodsDetail}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+
+</view>
+
+<!-- ./third -->
+
+
+<!-- ./ -->
+
+
+
+</view>
+<view class="bbb " style="bottom:0;">
+
+ <view class="flex-row-between flex-row-end gouwuche">
+  <view class="">
+    <text class="smallYellow margin-l-right">合计</text>
+    <text class="yuan">¥</text>
+    <text>23.00</text>
+  </view>
+  <text class="bigYellow" bindtap="confirm">加入购物车 ></text>
+ </view>
+ </view>

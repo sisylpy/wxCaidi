@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/index/index",
+        
+    "pages/register/register",      
+    "pages/order/order",
+    "pages/sign/sign",
+    "pages/oneGoodsPage/oneGoodsPage",
+    "pages/zeroGoodsPage/zeroGoodsPage",
+    "pages/customerInfo/customerInfo",
+    "pages/userPage/userPage",
+    "pages/caidiPage/caidiPage",
+    "pages/userGoodsPage/userGoodsPage",     
+    "pages/userGoodsToJoin/userGoodsToJoin",
+    "pages/templatesPage/templatesPage",
+    "pages/addTemplate/addTemplate",
+    "pages/templateDetail/templateDetail",
+    "pages/saleGoods/saleGoods"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

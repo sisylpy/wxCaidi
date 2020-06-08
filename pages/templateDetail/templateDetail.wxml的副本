@@ -1,0 +1,102 @@
+<import src='../../template/itemCar/itemCar.wxml' />
+
+<view class="with-padding mainBack">
+
+  <view class="top" style="width:{{windowWidth}}rpx;">
+
+    <view class="flex-row">
+      <image class="face" src="{{url + template.nxOdFilePath}}" wx:if="{{template.nxOdFilePath.length > 0}}"></image>
+      <view class="flex-column with-padding">
+        <view class="flex-row">
+          <text class="margin-right">收藏</text>
+          <text>3</text>
+        </view>
+        <view class="flex-row">
+          <text class="margin-right">标签</text>
+          <view class="lables">
+            <text>健身</text>
+            <text>高蛋白</text>
+            <text>聚会</text>
+          </view>
+        </view>
+         <view class="btn_item one_item" bindtap="editItem" hover-class="hover">
+        修改菜品
+      </view>
+
+      </view>
+    </view>
+
+    <!-- <view class="btns">
+     
+      <view class="btn_item" hover-class="hover" bindtap="toUserGoodsToJoin" data-id="{{template.nxOrderTemplateId}}">添加菜品
+      </view>
+    </view> -->
+  </view>
+
+
+
+<view class="all-one whiteBack">
+
+    <view class="one-out " wx:for="{{itemArr}}" wx:item="item">
+
+      <!-- width:{{windowWidth/12}}rpx; height:{{windowWidth/12}}rpx;line-height:{{windowWidth/12}}rpx;  -->
+      <view class="" >
+        <!-- {{item.nxOtOrderAmount}} -->
+        <image class="my-one-circle {{item.isSelected ? 'is-active' : ''}}" style="width:56rpx; height:56rpx;line-height:56rpx; margin-left:{{(windowWidth - 200) / 2}}rpx; margin-top: -24rpx;" src="../../images/itemSel.png"></image>
+      </view>
+
+      <view class="my-one-circle-edit {{item.isEdit ? 'is-active' : ''}}" style="width:56rpx; height:56rpx;line-height:56rpx; margin-left:{{(windowWidth - 200) / 2}}rpx;" bindtap="delateItem" data-index="{{index}}">X</view>
+
+      <view class="my-one {{item.isSelected ? 'is-active' : ''}}">
+        <view class="my-one-top flex-column">
+          <text>{{item.nxDistributerGoodsEntity.nxGoodsEntity.nxGoodsName}}</text>
+          <text class="otAmount {{item.isEdit ? 'is-active' : ''}}">{{item.nxOtAmount}}{{item.nxDistributerGoodsEntity.nxGoodsEntity.nxGoodsStandardname}}</text>
+          <text class="bbb">今日单价: {{item.nxDistributerGoodsEntity.dgGoodsPrice}}元/{{item.nxDistributerGoodsEntity.nxGoodsEntity.nxGoodsStandardname}}</text>
+         
+
+        </view>
+        <view class="my-line"></view>
+
+        <view class="my-one-foot-options  {{item.isSelected ? 'is-active' : ''}} ">
+          <view class="my-add-cancle" bindtap="cancleOne" data-index="{{index}}"> 取消</view>
+          <!-- <view class="flex-row-around">
+       <view class="my-add" bindtap="reduceItem" data-index="{{index}}">-</view>
+       <view class="splitOptions"></view>
+       <view class="my-add" bindtap="addItem" data-index="{{index}}">+</view>
+      </view> -->
+
+
+        </view>
+
+        <view class="my-one-foot-options  {{item.isEdit ? 'is-active' : ''}} ">
+          <view class="flex-row-around">
+            <view class="my-add" bindtap="reduceItem" data-index="{{index}}">-</view>
+            <view class="splitOptions"></view>
+            <view class="my-add" bindtap="addItem" data-index="{{index}}">+</view>
+          </view>
+        </view>
+
+        <view class="my-one-foot {{item.isSelected || item.isEdit ? 'is-hidden' : ''}}" hover-class="hover" bindtap="selectOne" data-index="{{index}}">
+          <text class="my-add">+</text>
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+  </view>
+
+
+
+
+  <button class="saveItemBtn {{edit ? 'is-active' : ''}}" bindtap="saveEditItems">保存</button>
+
+</view>
+<view style="{{selectNumber > 0 ?'height: 130rpx' : ''}}"></view>
+
+
+<template is="itemCar" data='{{itemNumber:selectNumber}}'></template>

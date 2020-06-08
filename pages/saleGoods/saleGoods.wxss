@@ -1,0 +1,124 @@
+/* pages/saleGoods/saleGoods.wxss */
+
+.top-image{
+  width: 100%;
+  height: 400rpx;
+}
+
+.nutritional{
+  display: inline-flex;
+}
+.nutritional-one{
+white-space:nowrap;
+
+}
+.nutritional-two{
+}
+
+
+/*  */
+
+
+.father {
+  padding: 20rpx;
+  display: flex;
+  flex-flow: row wrap;
+  background: #fff;
+   justify-content: space-between;
+  justify-items: center;
+}
+
+.one_goods {
+  /* background: rgb(24, 150, 131); */
+  /* background: #20afb8; */
+  width: 28%;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 34rpx;
+  padding: 10rpx;
+  border-radius: 2%;
+  /* padding-top: 20rpx; *//* padding-bottom: 20rpx; */
+}
+.one_goods.is-active{
+  /* border: 5rpx solid #000; */
+  box-sizing: content-box;
+}
+
+.goods_name {
+  background: yellow;
+  color: #000;
+  line-height: 80rpx;
+  margin-bottom: 6rpx;
+  padding: 5rpx;
+  font-weight: 500;
+}
+.goods_name.is-active{
+  color: gray;
+}
+
+.goods_price {
+  font-size: 30rpx;
+  line-height: 80rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.money {
+  background: #fff;
+  margin-right: 6rpx;
+  padding: 5rpx;
+  flex-grow: 1;
+}
+
+.big {
+  background: #fff;
+  margin-right: 6rpx;
+  padding: 5rpx;
+  font-size: 40rpx;
+  flex-grow: 1;
+}
+
+.small {
+  background: #fff;
+  font-size: 32rpx;
+  margin-right: 6rpx;
+  flex-grow: 1;
+}
+
+.starndard {
+  background: #fff;
+  padding: 5rpx;
+  font-size: 28rpx;
+  flex-grow: 1;
+}
+
+
+.place{
+  padding: 10rpx 0 ;
+  height: 60rpx;
+}
+.place-words{
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+
+/*  */
+
+.gouwuche {
+  background: #000;
+  color: #fff;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+.bbb{
+  /* height: 300rpx; */
+  /* background: blue; */
+  position: fixed;
+  left: 0;
+  right: 0;
+}

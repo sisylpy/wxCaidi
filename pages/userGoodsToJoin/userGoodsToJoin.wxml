@@ -1,0 +1,98 @@
+<!-- card -->
+
+
+<view class="customerPage">
+<!-- first -->
+  <view class="row whiteBack">
+    <image class="top-image" src="../../images/teji1.jpg"></image>
+    <view class="flex-column with-lr-padding with-border-bottom">
+       <view class="flex-row-between with-tb-padding">
+       <text class="">裙带菜</text>
+       <text class="cate_content">¥ 9.00元/2袋</text>
+       </view>
+
+       <view class="flex-row-between margin_bottom">
+       <view>
+       <text class="cate-explain">今日热销</text>
+        <text class="cate_yuan">每袋立省6元</text>
+       </view>
+       <text>¥ 21.00元/斤</text>
+       </view>
+    </view>
+  </view>
+  <!-- ./first -->
+
+<!-- second -->
+
+<view class="flex-column with-padding whiteBack margin_bottom smallBlack">
+  <view class="flex-row margin_bottom">
+    <text class="margin-l-right">净含量:</text>
+    <text>1公斤</text>
+  </view>
+
+   <view class="flex-row margin_bottom">
+    <text class="margin-l-right">保质期:</text>
+    <text>3个月</text>
+  </view>
+
+   <view class="flex-row margin_bottom">
+    <text class="margin-l-right">储存条件:</text>
+    <text>深冷、冷冻-18度</text>
+  </view>
+
+  <view class="nutritional margin_bottom">
+    <view class="nutritional-one margin-l-right">营养成份:</view>
+    <view class="nutritional-two">鸡翅有温中益气、补精添髓、强腰健胃等功效，鸡中翅相对翅尖和翅根来说，它的胶原蛋白含量丰富，对于保持皮肤光泽、增强皮肤弹性均有好处。</view>
+  </view>
+
+</view>
+
+<!-- ./second -->
+
+<!-- third -->
+
+<view class="whiteBack">
+  <view>
+    麻辣香锅
+  </view>
+</view>
+
+<!-- ./third -->
+
+</view>
+
+
+
+
+<view class="card " wx:for="{{items}}" wx:item="item">
+  <!-- -->
+  <view class="card_container " style="height: {{(windowWidth - windowWidth/4) * 0.618 }}rpx">
+
+    <view class="card_right">
+      <image class="card_right_img" src="{{url+item.nxCommunityGoodsEntity.nxCgGoodsFilePath}}"></image>
+    </view>
+
+    <view class="card_left">
+      <!-- 1， logo_begin -->
+      <view class="logo flex-row" bindtap="toCaidiPage">
+        <view class=" flex-column">
+          <text class="normal weight_five">{{item.nxCommunityGoodsEntity.nxGoodsEntity.nxGoodsName}}</text>
+        </view>
+      </view>
+
+      <!--2， member_begin -->
+      <view class="member  middle" bindtap="toUserPage">
+        <text class="margin-right normal">-</text>
+        <text class="margin-right">{{item.nxCugLastOrderQuantity}}{{item.nxCugLastOrderStandard}} </text>
+        <text class="normal">+</text>
+      </view>
+
+      <view class="points" bindtap="toAdd" data-index="{{index}}">
+        <text class="points_btn">加入购物车</text>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+<!-- ./card -->

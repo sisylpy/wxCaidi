@@ -1,0 +1,35 @@
+<import src='../../template/car/car.wxml' />
+
+
+<page>
+
+    <view class="search" style="background: {{color}}">
+      <navigator url="/pagesCustomer/search/search">
+        <view class="search_content with-padding">
+          <text class="cate_name">{{fatherName}}</text>
+          <icon class="wx_icon" type="search" size="30" color="white"></icon>
+        </view>
+      </navigator>
+    </view>
+    <view class="father">      
+      <view class="one_goods" style="background: {{color}}"  wx:for="{{goodsList}}" wx:key="nxCommunityGoodsId" bindtap="{{item.nxCgGoodsStatus == '0' ? 'showGoodsPage' : ''}}" wx:for-item="item"  data-id="{{item.nxCommunityGoodsId}}" data-name="{{item.nxCgGoodsName}}" data-index="{{index}}" data-type="{{item.nxCgGoodsSellType}}">
+<!-- margin-left:{{ (windowWidth / 3 - 140)/2}}rpx; -->
+   <view class="select_circle_test {{item.nxCgGoodsStatus == '11' ? 'is-active': ''}}" style="width:{{(windowWidth - 160) / 3}}rpx; height:260rpx; " bindtap="promation" data-id="{{item.nxCgGoodsId}}"> <view class="kankan" style="width:{{windowWidth / 3 - 50}}rpx;  margin-top:160rpx;">¥3.5/斤</view></view>
+    <view class="select_circle black {{item.nxCgGoodsStatus == '12' ? 'is-active': ''}}" style="width:50rpx; height:50rpx;line-height:50rpx;margin-left:{{(windowWidth - 340) / 3}}rpx;">停售</view>
+        <view class="goods_name {{item.isSelected ? 'is-active': ''}}">{{item.nxCgGoodsName}}</view>
+        <view class="goods_price">
+          <view class="money {{item.nxCgGoodsStatus == '11' ? 'has-line-through' : ''}}">¥</view>
+          <view class="big {{item.nxCgGoodsStatus == '11' ? 'has-line-through' : ''}}">{{item.nxCgGoodsPrice}}</view>
+          <view class="small {{item.nxCgGoodsStatus == '11' ? 'has-line-through' : ''}}">.{{item.nxCgGoodsPriceDecimal}}</view>
+          <view class="standard {{item.nxCgGoodsStatus == '11' ? 'has-line-through' : ''}}">/{{item.nxCgGoodsStandardname}}</view>
+        </view>
+        <view class="options  {{item.isSelected ? 'hidden' : ''}}" data-index="{{index}}" data-name="{{item.nxCgGoodsName}}" data-id="{{item.nxCgNxGoodsId}}" data-item="{{item}}" data-standard="{{item.nxCgGoodsStandardname}}">
+          <view class="place">
+            <text class="place-words">{{item.nxCgGoodsDetail}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+</page>
+
+

@@ -1,0 +1,76 @@
+<!--  -->
+
+<view class="orderBackOne" style="height: {{windowHeight  - 160}}rpx; ">
+
+  <image class="one_row_one" style="width:{{windowWidth}}rpx;" src="{{url + goods.nxCgNxGoodsFilePath}}" wx:if="{{goods.nxCgNxGoodsFilePath.length>0}}"></image>
+
+  <view class="second_row_one ">
+    <view class="flex-column">
+      <view class="all smallBlack">全部 ></view>
+
+      <view class="flex-row-around">
+        <swiper style="width:{{windowWidth}}rpx; height:{{(windowHeight  - 160)/10*4 - 100}}rpx;" bindchange="changeStandard" previous-margin='87.5rpx' next-margin='87.5rpx' indicator-dots="true" indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#fb0">
+          <swiper-item wx:for="{{standardArr}}" wx:for-item="item" wx:key="nxDistributerStandardId">
+            <view style="width:{{windowWidth-300}}rpx;" class="flex-row kankan">
+              <image class="sel_icon" wx:if="{{item.isSelect}}" src="../../images/duihao.png"></image>
+              <image class="sel_icon" wx:else src="../../images/logo.jpg"></image>
+              <view class="flex-column">
+                <image class="second_row_img" wx:if="{{item.nxCsStandardFilePath.length>0}}" src="{{url + item.nxCsStandardFilePath}}" style="width:{{windowWidth / 3}}rpx; height:{{(windowHeight  - 100) /5}}rpx;"></image>
+                <view class="item_words flew-row">{{item.nxCsStandardScale}}{{goods.nxGoodsEntity.nxGoodsStandardname}}/{{item.nxCsStandardName}} </view>
+                <!-- <view class="smallGray">误差:{{item.nxDsStandardError}}{{goods.nxGoodsEntity.nxGoodsStandardname}}</view> -->
+                <!-- <view style="line-height:{{200}}rpx;"></view> -->
+              </view>
+            </view>
+          </swiper-item>
+
+        </swiper>
+      </view>
+    </view>
+
+
+  </view>
+
+ 
+</view>
+
+
+<view class="bbb " style="bottom:0;">
+
+
+<!--  -->
+ <view class="third_row_one">
+    <view class="third_row_content_one" style="width:{{windowWidth / 3 * 2}}rpx;">
+      <view class="third-left flex-row">
+        <view class="left-words">
+          <text class="smallBlack margin-l-right">单价</text>
+          <text class="yuan">¥</text>
+        </view>
+        <view class="left-price">
+          <text class="middle margin-right">{{standardPrice}}</text>
+        </view>
+      </view>
+
+      <view class="third-middle ">
+        <view class="split"></view>
+      </view>
+
+      <view class="third-right flex-row ">
+        <text class="option_item options_add" bindtap="reduceOne">-</text>
+        <text class="options_number">{{amount}}</text>
+        <text class="">{{standardName}}</text>
+        <text class="option_item options_reduce" bindtap="addOne">+</text>
+      </view>
+    </view>
+  </view>
+
+<!-- ./ -->
+ <view class="flex-row-between flex-row-end gouwuche">
+  <view class="">
+    <text class="smallYellow margin-l-right">合计</text>
+    <text class="yuan">¥</text>
+    <text>{{sub}}</text>
+  </view>
+  <text class="bigYellow" bindtap="confirm">加入购物车 ></text>
+ </view>
+ 
+</view>

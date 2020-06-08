@@ -1,0 +1,101 @@
+<view class="">
+  <view class="address flex-row-between whiteBack with-padding margin_bottom" bindtap="toAddressPage">
+    <view class="flex-column middleBlack weight_five">
+      <text>{{userInfo.nxCommunityEntity.nxCommunityName}}{{userInfo.nxCustomerAddress}}</text>
+      <text>{{userInfo.nxCustomerName}} {{userInfo.nxCustomerPhone}}</text>
+    </view>
+    <view>
+      <text>></text>
+    </view>
+  </view>
+
+  <view class="with-padding margin_bottom">
+    <view class="smallGray margin_l_bottom">请选择送达时间</view>
+    <view class="flex-row">
+      <view class="userTime">
+        <view class="flex-column">
+          <text class="middleBlack">最早送达</text>
+          <text class="userTime-time">{{multiArray[0][0]}}{{multiArray[1][0]}}{{multiArray[2][0]}}</text>
+        </view>
+
+        <view class="select {{userTime ? '' : 'is-active'}}" bindtap="cancelUsertime">
+          <image wx:if="{{userTime ? '' : 'is-active'}}" class="select_icon" src="/images/duihao.png"></image>
+        </view>
+      </view>
+
+      <view class="userTime">
+        <view class="flex-column ">
+          <text class="middleBlack">预约送达时间</text>
+          <text class="userTime-time" wx:if="{{userTime ? 'is-active' : ''}}">{{userTime.method}}{{userTime.dayName}}{{userTime.dayTime}} </text>
+        </view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{customerChoice}}" value="{{multiIndex}}" range="{{multiArray}}">
+
+          <view class="select {{userTime ? 'is-active' : ''}}">
+            <image wx:if="{{userTime ? 'is-active' : ''}}" class="select_icon" src="/images/duihao.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="whiteBack margin_bottom">
+    <view class="with-padding " wx:for="{{applyArr}}" wx:item="item" wx:key="index">
+
+      <view class="oderCar-row">
+        <view class="orderCar-left middleBlack weight_five">{{item.nxCommunityGoodsEntity.nxCgGoodsName}} </view>
+        <view class="orderCar-middle flex-row-end">
+          <text class="margin-l-right">¥</text>
+          <text class="normal">{{item.nxOsSubtotal}}</text>
+        </view>
+
+        <view class="orderCar-right flex-row-end">
+          <view class="right-btns">
+            <view class="applyNumberBtn" bindtap="reduce" data-index="{{index}}">-</view>
+          </view>
+          <view class="quantity">
+            <text class="">{{item.nxOsQuantity}}</text>
+            <text class="">{{item.nxOsStandard}}</text>
+          </view>
+          <view class="right-btns">
+            <view class="applyNumberBtn" bindtap="add" data-index="{{index}}">+</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="grayLine"></view>
+    <view class="flex-row-between whiteBack with-padding">
+      <text class="middle">合计</text>
+      <view class="flex-row-end">
+        <text class="smallBlack">¥</text>
+        <text class="normal">{{total}}</text>
+      </view>
+    </view>
+  </view>
+
+   <view class="whiteBack margin_bottom with-padding">
+      订单备注
+    </view>
+    
+</view>
+
+
+
+<view class="orderCar">
+
+  <view class="car">
+    <view class="car_left">
+      <text class="yuan margin-right">¥</text>
+      <text class="total">{{total}}</text>
+    </view>
+    <view class="car_middle ">
+      <view class="split"></view>
+    </view>
+    <view class="car_right orderCar_send" bindtap="gorRunnerLobby">
+      <text>去支付 ></text>
+    </view>
+  </view>
+
+</view>

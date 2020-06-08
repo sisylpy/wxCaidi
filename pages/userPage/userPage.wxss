@@ -1,0 +1,13 @@
+
+.face {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-top: 30rpx;
+  border: 1px solid lightgray;
+  padding: 50rpx 0;
+}
+
+.faceImage {
+  border-radius: 50%;
+}

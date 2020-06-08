@@ -1,0 +1,102 @@
+<import src='../../template/car/car.wxml' />
+
+<view class="index_back flex-column-center">
+
+
+  <!-- 滚动 -->
+  <swiper class="swiper" style="width:{{windowWidth - 40}}rpx; height:300rpx;" indicator-dots="true" class="margin_bottom" indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="#fff" autoplay="true" interval="5000" duration="500" circular="true">
+    <swiper-item class="swiper_item" wx:for="{{adsenseList}}" wx:for-item="item">
+      <image class="swiper_img" style="width:{{windowWidth - 40}}rpx; height:300rpx;" src="{{url + item.nxAdsenseFilePath}}"></image>
+    </swiper-item>
+  </swiper>
+
+
+
+
+
+  <!-- userTime -->
+  <view class="top" style="width:{{windowWidth - 40}}rpx;">
+    <view class="top_content">
+      <view class="top_first flex-column" wx:if="{{userTime.dayName}}">
+        <view class="wx_name">{{userTime.method}} | {{userTime.dayName}}{{userTime.dayTime}}</view>
+      </view>
+      <view class="top_first flex-column" wx:else>
+        <view class="wx_name">最早送达 {{multiArray[0][0]}}{{multiArray[1][0]}}{{multiArray[2][0]}}</view>
+      </view>
+      <view class="userTime">
+        <view class="appointment">
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{customerChoice}}" value="{{multiIndex}}" range="{{multiArray}}">
+            我要预约
+          </picker>
+        </view>
+        <view class="split"></view>
+
+        <view class="flex-column-center" bindtap="toUserGoodsPage">
+          <image class="face" src="{{userInfo.nxCustomerUserEntity.nxCuWxAvatarUrl}}"></image>
+          <text class="face_name">会员中心</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- ./userTime -->
+  <view>
+
+    <!-- cataList -->
+    <view class="whole" style="width:{{windowWidth - 40}}rpx;">
+
+
+
+
+
+      <view class="one" wx:for="{{goodsList}}" wx:key="nxCommunityGoodsFatherId" wx:for-item="one" >
+        <image class="one-img" style="width:{{windowWidth - 40}}rpx;" src="{{url + one.nxFatherGoodsImg}}" wx:if="{{one.nxFatherGoodsImg.length > 0}}"></image>
+        <view class="fatherName is-active">
+          <view class="goods_name weight_five"> {{one.nxFatherGoodsName}}</view>
+          <view class="cata_btn" bindtap="clickFather" data-id="{{one.nxCommunityFatherGoodsId}}" data-fathername="{{one.nxFatherGoodsName}}" data-color="{{one.nxFatherGoodsColor}}">查看商品</view>
+        </view>
+    <view class="flex-column">
+            <view class="triangle {{}}"></view>
+ <view class="sale  flex-row-between">
+          <view class="one-sale" bindtap="clickSale" data-id="{{promote.nxPromoteId}}" data-index="{{oneIndex}}" wx:for="{{one.nxPromoteEntities}}" wx:for-item="promote">
+            <view class="one-img-wrapper">
+              <image class="one-img-sale" src="{{ url + promote.nxPromoteFilePath}}" style="width:{{(windowWidth - 100) / 2}}rpx;"></image>
+            </view>
+            <view class=" with-padding flex-column">
+                <text class="cate_content">{{promote.name}}</text>
+              <view class="flex-row-between">
+                <view class="flex-row-between">
+                  <view class="cate_name">
+                    <text class="cate_money">¥</text>
+                    <text class="cate_content margin-l-right">{{promote.nxPromotePrice}}</text>
+                    <text class="cate_yuan">¥{{promote.nxOrignalPrice}}</text>
+                  </view>
+                </view>
+                <view class="flex-row">
+                  <text class="cate-explain margin-l-right">{{promote.nxPromoteWords}}</text>
+                </view>
+
+              </view>
+
+            </view>
+
+
+          </view>
+
+
+        </view>
+    </view>
+       
+
+
+
+      </view>
+    </view>
+  </view>
+</view>
+<!-- ./cataList -->
+<!-- height -->
+<view style="{{applyArr.length > 0 ?'height: 130rpx' : ''}}"></view>
+<!-- ./height -->
+
+<carPage show="{{showCar}}" windowHeight="{{windowHeight}}" windowWidth="{{windowWidth}}" bindadd="add" bindreduce="reduce" bindemptyApplyArr="emptyApplyArr" carArr="{{applyArr}}" />
+<template is="car" data='{{applyArr:applyArr, applyNumber:applyNumber}}'></template>

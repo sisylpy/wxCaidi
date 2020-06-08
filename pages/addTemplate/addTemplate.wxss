@@ -1,0 +1,100 @@
+/* pages/classContentPage/classContentPage.wxss */
+
+.main{
+  padding: 20rpx 20rpx;
+}
+
+.img_name{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  /* background: red; */
+  margin-bottom: 40rpx;
+
+}
+.class_img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+
+}
+.class_name{
+  display: flex;
+  flex-flow: column wrap;
+
+}
+.class_explain{
+ /* background: yellow; */
+ font-size: 30rpx;
+ color:  gray;
+}
+.class_name_input{
+  font-size: 40rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid gray;
+  margin-top: 10rpx;
+  width: 100%;
+}
+.saveBtn{
+  width: 150rpx;
+
+}
+.saveBtn_content{
+
+  background: lightgray;
+  border-radius: 50%;
+  height: 120rpx;
+  line-height: 120rpx;
+  width: 120rpx;
+  text-align: center;
+  margin-left: 15rpx;
+}
+.saveBtn_content.is-active{
+  background: #242334;
+  color: #fff;
+}
+
+/*  */
+.list{
+  display: flex;
+  flex-flow: column wrap;
+ 
+  margin-top: 50rpx;
+
+}
+
+
+
+/* 学生列表 */
+
+.check_group{
+  display: flex;
+  flex-flow: row wrap; 
+  justify-content: center;
+}
+.checkbox {
+  width: 33%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 20rpx;
+  justify-content: flex-start;
+  align-content: center;
+    /* background: gray; */
+  
+
+
+}
+.check_icon{
+  /* flex-basis: 30%; */
+  
+
+}
+
+.item_name{
+  /* flex-basis: 70%; */
+
+  /* background: red; */
+  
+}

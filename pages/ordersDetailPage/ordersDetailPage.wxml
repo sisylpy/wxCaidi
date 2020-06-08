@@ -1,0 +1,161 @@
+<!-- first -->
+<view class="top flex-column-center whiteBack  with-tb-padding margin_l_bottom">
+
+  <view class="top-status flex-row with-tb-padding">
+    <view class="status-item flex-column">
+      <view class="status-words">
+        <text class="smallGray {{order.nxOrdersStatus == 0 ? 'is-active' : ''}}" wx:if="{{order.nxOrdersStatus == 0}}">等待拣货</text>
+        <text class="smallGray {{order.nxOrdersStatus > 0 ? 'is-finished' : ''}}" wx:else>等待拣货</text>
+      </view>
+      <view class="status-line {{order.nxOrdersStatus > 0 ? 'is-active' : ''}}"></view>
+
+      <view class="status-img">
+        <view class="order-status-finished {{order.nxOrdersStatus > 0 ? 'is-active' : ''}}"></view>
+        <view class="order-status-doing {{order.nxOrdersStatus == 0 ? 'is-active' : ''}}">
+          <view class="out flex-column-center">
+            <view class="inner"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="status-item flex-column">
+      <view class="status-words">
+              <text class="smallGray {{order.nxOrdersStatus == 1 ? 'is-active' : ''}}"  wx:if="{{order.nxOrdersStatus == 1}}">准备配送</text>
+
+        <text class="smallGray {{order.nxOrdersStatus > 1 ? 'is-finished' : ''}}" wx:else>准备配送</text>
+      </view>
+      <view class="status-line {{order.nxOrdersStatus == 2 ? 'is-active' : ''}}"></view>
+
+      <view class="status-img">
+        <view class="order-status-waiting {{order.nxOrdersStatus < 1 ? 'is-active' : ''}}"></view>
+        <view class="order-status-doing {{order.nxOrdersStatus == 1 ? 'is-active' : ''}}">
+        <view class="order-status-finished {{order.nxOrdersStatus > 1 ? 'is-active' : ''}}"></view>
+          <view class="out flex-column-center">
+            <view class="inner"></view>
+          </view>
+        </view>
+        <view class="order-status-waiting {{order.nxOrdersStatus == 2 ? 'is-active' : ''}}"></view>
+      </view>
+    </view>
+
+    <view class="status-item flex-column">
+      <view class="status-words">
+        <text class="smallGray" wx:if="{{order.nxOrdersStatus < 3}}">已完成</text>
+         <text class="smallGray {{order.nxOrdersStatus == 3 ? 'is-finished' : ''}}" wx:else>已完成</text>
+      </view>
+      <view class="status-line-none {{order.nxOrdersStatus == 3 ? 'is-active' : ''}}"></view>
+
+      <view class="status-img">
+        <view class="order-status-waiting {{order.nxOrdersStatus < 3 ? 'is-active' : ''}}"></view>
+        <view class="order-status-finished {{order.nxOrdersStatus > 3 ? 'is-active' : ''}}"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="smallBlack" wx:if="{{order.nxOrdersStatus == 0}}">
+    您的订单正在准备中
+  </view>
+  <view class="smallBlack" wx:elif="{{order.nxOrdersStatus == 1}}">
+    您的订单拣货完成，准备配送。
+  </view>
+  <view class="smallBlack" wx:else>
+    您的订单已完
+  </view>
+
+  <view class="smallGray flex-column-center last-row">
+    <text class="with-tb-padding">送达时间 {{order.nxOrdersServiceDate}} {{order.nxOrdersServiceTime}}</text>
+    <text class="">如有疑问请致电13910825707</text>
+  </view>
+</view>
+
+<!-- ./first -->
+
+<!-- information -->
+
+<view class="flex-column with-padding whiteBack margin_l_bottom">
+  <text class="row-left">配送信息</text>
+
+  <view class="flex-row smallGray with-l-margin-top">
+    <text class="row-left">联系人:</text>
+    <text class="row-right">{{order.nxCustomerEntity.nxCustomerName}} {{order.nxCustomerEntity.nxCustomerPhone}}</text>
+  </view>
+
+  <view class="flex-row smallGray with-l-margin-top">
+    <text class="row-left">配送地址:</text>
+    <text class="row-right">{{order.nxCustomerEntity.nxCommunityEntity.nxCommunityName}} {{order.nxCustomerEntity.nxCustomerAddress}}</text>
+  </view>
+
+  <view class="flex-row smallGray with-l-margin-top">
+    <text class="row-left">配送时间:</text>
+    <text class="row-right">{{order.nxOrdersServiceDate}} {{order.nxOrdersServiceTime}}</text>
+  </view>
+</view>
+<!-- ./information -->
+
+
+<!-- goodsList -->
+
+<view class="whiteBack margin_l_bottom">
+  <view class="with-l-margin-bottom with-padding" wx:for="{{order.nxOrdersSubEntities}}" wx:for-item="item" wx:key="nxOrdersSubId">
+    <view class="flex-row">
+      <view class="goods-name">{{item.nxGoodsEntity.nxGoodsName}}</view>
+      <view class="goods-amount flex-row-end">
+      <text class="margin-l-right">{{item.nxOsQuantity}}{{item.nxOsStandard}}</text>
+      <text class="smallGray" wx:if="{{item.nxOsGoodsSellStandardScale !== null}}">({{item.nxOsSubWeight}}{{item.nxGoodsEntity.nxGoodsStandardname}})</text>
+      </view>
+      <view class="goods-subTotal">
+        <text class="smallBlack margin-l-right">¥</text>
+        <text class="normal">{{item.nxOsSubtotal}}</text>
+      </view>
+    </view>
+    <!-- <view class="flex-row-end">
+      <text class="yuan"> ¥ </text> 
+      <text class="smallBlack">{{item.nxDistributerGoodsEntity.dgGoodsPrice}}.{{item.nxDistributerGoodsEntity.dgGoodsPriceDecimal}}/{{item.nxGoodsEntity.nxGoodsStandardname}}</text>
+    </view> -->
+
+
+  </view>
+  <view class="grayLine"></view>
+  <view class="flex-row-between with-padding ">
+    <text>合计</text>
+    <view>
+      <text class="orderSmall">¥</text>
+      <text>{{order.nxOrdersAmount}}</text>
+    </view>
+  </view>
+</view>
+
+
+<!-- ./goodsList -->
+
+<!-- orderInfo -->
+
+<view class="flex-column with-padding whiteBack">
+  <text class="row-left">订单信息</text>
+
+  <view class="flex-row smallGray with-l-margin-top">
+    <text class="row-left">订单号:</text>
+    <text class="row-right">2020-6007</text>
+  </view>
+
+  <view class="flex-row smallGray with-l-margin-top">
+    <text class="row-left">支付方式:</text>
+    <text class="row-right">微信支付</text>
+  </view>
+
+  <view class="flex-row smallGray with-l-margin-top">
+    <text class="row-left">下单时间:</text>
+    <text class="row-right">{{order.nxOrdersDate}}</text>
+  </view>
+
+</view>
+
+<view class="cancle-btn  with-padding {{order.nxOrdersStatus == 0 ? 'is-active' : ''}}">
+<view class="flex-row-around">
+  <text class="btn" bindtap="cancleOrder">取消订单</text>
+</view>
+</view>
+
+<!-- ./orderInfo -->
