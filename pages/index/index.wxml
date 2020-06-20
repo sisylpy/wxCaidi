@@ -55,7 +55,7 @@
           <view class="cata_btn" bindtap="clickFather" data-id="{{one.nxCommunityFatherGoodsId}}" data-fathername="{{one.nxFatherGoodsName}}" data-color="{{one.nxFatherGoodsColor}}">查看商品</view>
         </view>
     <view class="flex-column">
-            <view class="triangle {{}}"></view>
+            <view class="triangle {{one.nxPromoteEntities.length == 0 ? 'is-hidden' : ''}}"></view>
  <view class="sale  flex-row-between">
           <view class="one-sale" bindtap="clickSale" data-id="{{promote.nxPromoteId}}" data-index="{{oneIndex}}" wx:for="{{one.nxPromoteEntities}}" wx:for-item="promote">
             <view class="one-img-wrapper">

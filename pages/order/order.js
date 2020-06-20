@@ -131,6 +131,7 @@ Page({
     var sub = this.data.applyArr[applyIndex].nxOsSubtotal;
     var sellType = this.data.applyArr[applyIndex].nxOsGoodsSellType;
     var price = this.data.applyArr[applyIndex].nxOsPrice;
+    var nxOsStandardPrice = this.data.applyArr[applyIndex].nxOsStandardPrice;
     var zeroPrice = Number(price) / 10;
     zeroPrice.toFixed(1);
     var scale = this.data.applyArr[applyIndex].nxOsGoodsSellStandardScale;

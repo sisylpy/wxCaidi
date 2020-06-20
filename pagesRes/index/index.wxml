@@ -1,0 +1,64 @@
+<!--pagesD/index/index.wxml-->
+
+<view class='flex-column'>
+
+  <!-- 用户 openid -->
+  <view class="top with-padding" style="width:{{windowWidth - 40}}rpx;">
+    
+    <view class='dateGroup'>
+      <view id='week' class="">{{week}}</view>
+      <view id='date'>{{date}}</view>
+    </view>
+    <view class='intro with-lr-padding'  style="width:{{windowWidth - 180}}rpx;">
+      2位订货群成员订货34个菜品，完成30个，待称重3个，无货1个。
+    </view>
+  </view> 
+
+  <!-- 按钮 buttons -->
+  <view class='flex-column'>
+   <bigButton content="{{twoName}}" imgUrl="{{twoUrl}}" bindtoWhere="toibook"></bigButton>
+  
+    <!-- <bigButton content="{{threeName}}" imgUrl="{{threeUrl}}" bindtoWhere="addApply"></bigButton> -->
+
+ <navigator url="../orderGroup/orderGroup">
+       <bigButton content="{{oneName}}" imgUrl="{{oneUrl}}" bindtoWhere="toWeb"></bigButton>
+   </navigator>
+
+  </view>
+
+  <!-- 申请 applys -->
+
+  
+  
+  <!-- <view class='groups'>
+    <view class='titlename'>今日订货：</view>
+
+        <view class="half-box">
+            <view class="ul">
+              <view class="li  with-border-bottom {{applyArr.length == 1 || applyArr.length == index+1 ? 'is-last': ''}}" wx:for="{{applyArr}}">
+                <text class="name ">{{item.ckGoodsEntity.goodsName}}</text>
+                <text class="number">{{item.applyNumber}}{{item.applyStandardname}}</text>
+                <text class=" status" wx:if='{{item.applyStatus == "0"}}'>新申请</text>
+                <text class=" status" wx:elif='{{item.applyStatus == "1"}}'>出库中</text>
+                <text  class="status" wx:else>出库完成</text>
+                <text class="quantity" wx:if='{{item.applyStatus == "2"}}'>{{item.stockRecordEntity.quantity}}{{item.ckGoodsEntity.purStandardName}}</text>
+                <text class="price" wx:if='{{item.applyStatus == "2"}}'>{{item.stockRecordEntity.discountPrice}}元/{{item.ckGoodsEntity.purStandardName}}</text>
+
+              </view> 
+          </view>
+    </view>
+
+
+    
+  </view> -->
+
+
+
+
+
+
+
+
+
+
+</view>

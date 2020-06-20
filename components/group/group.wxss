@@ -1,0 +1,36 @@
+/* components/group/group.wxss */
+
+.group {
+  border-bottom: 1px solid lightgray;
+  height: 140rpx;
+  width: 800rpx;
+  /* margin-left: -10rpx; */
+}
+
+.url {
+  width: 100rpx;
+  height: 100rpx;
+  /* border: 1px solid gray; */
+  border: 1px solid rgba(211, 211, 211, 0.5);
+  float: left;
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+}
+
+.name {
+  line-height: 140rpx;
+  float: left;
+  width: 360rpx;
+  margin-left: 20rpx;
+  /* border: 1px solid red; */
+}
+
+.num {
+  line-height: 140rpx;
+  float: left;
+  width: 240rpx;
+  /* border:1px solid yellow; */
+  font-size: 30rpx;
+  color: gray;
+}

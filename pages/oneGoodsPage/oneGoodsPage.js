@@ -43,7 +43,8 @@ Page({
           var goods = this.data.goods;
           var standardArr = this.data.standardArr;
 
-          var price = Number(goods.nxCgGoodsPrice + goods.nxCgGoodsPriceDecimal);
+          var price = Number(goods.nxCgGoodsPrice + '.' + goods.nxCgGoodsPriceDecimal);
+          console.log(price)
           var scale = Number(standardArr[0].nxCsStandardScale);
           var standardName = standardArr[0].nxCsStandardName;
           var sel = "standardArr[0].isSelect";
@@ -74,8 +75,6 @@ Page({
   },
 
   changeStandard:function(e){
-
-
     var current = e.detail.current;
     var sel = "standardArr["+ current +"].isSelect";
     var lastSel = "standardArr[" + this.data.current + "].isSelect"
@@ -98,21 +97,23 @@ Page({
     })
   },
 
+  
   addOne: function (e) {
     var amount = Number(this.data.amount) + 1;
-    var scale = Number(this.data.standardArr[this.data.current].nxCsStandardScale);
-    var sub = (Number(this.data.price) * amount * scale).toFixed(1);
+    var sub = (this.data.standardPrice * amount).toFixed(1);
     this.setData({
       amount: amount,
       sub: sub,
-
     })
   },
+  
+
+
   reduceOne: function (e) {
     if (this.data.amount > 1) {
       var amount = this.data.amount - 1;
-      var scale = Number(this.data.standardArr[this.data.current].nxCsStandardScale);
-      var sub = (this.data.price * amount * scale).toFixed(1);
+     
+      var sub = (this.data.standardPrice * amount).toFixed(1);
       this.setData({
         amount: amount,
         sub: sub,
@@ -124,24 +125,24 @@ Page({
   confirm: function (e) {
     var goods = this.data.goods;
     var standardArr = this.data.standardArr;
-    var price = Number(goods.nxCgGoodsPrice) + Number(goods.nxCgGoodsPriceDecimal);
     var standard = standardArr[this.data.current].nxCsStandardName;
-    var weight = 
-      (Number(standardArr[this.data.current].nxCsStandardScale) * Number(this.data.amount)).toFixed(1); 
-    var subTotal = (weight * price).toFixed(1)
-    console.log("what is the mattthher?")
-    console.log(goods)
+    var price = goods.nxCgGoodsPrice + '.' + goods.nxCgGoodsPriceDecimal;
+    var subWeight = 
+      (Number(standardArr[this.data.current].nxCsStandardScale) * this.data.amount).toFixed(1);
+      var subTotal = (this.data.amount * this.data.standardPrice).toFixed(1)
+   
     var apply = {
       nxOsNxGoodsId: goods.nxCgNxGoodsId,
       nxOsQuantity: this.data.amount,
+      nxOsStandardPrice: this.data.standardPrice,
       nxOsStandard: standard,
       nxOsPrice: price,
-      nxOsGoodsFatherId: goods.nxCgCfGoodsFatherId,
+      nxOsCommunityGoodsFatherId: goods.nxCgCfGoodsFatherId,
       nxOsCommunityGoodsId: goods.nxCommunityGoodsId,
       nxOsGoodsSellType: goods.nxCgGoodsSellType,
       nxOsGoodsType: goods.nxCgGoodsType,
       nxOsGoodsSellStandardScale: standardArr[this.data.current].nxCsStandardScale,
-      nxOsSubWeight: weight,
+      nxOsSubWeight: subWeight,
       nxOsSubtotal: subTotal,
       nxOsSubSupplierId: goods.nxCgSupplierId,
       nxOsCommunityId: goods.nxCgCommunityId,

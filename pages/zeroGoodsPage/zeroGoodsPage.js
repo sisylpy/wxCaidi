@@ -68,11 +68,11 @@ Page({
    ; 
 
     var apply = {
-      nxOsGoodsId: goods.nxCgGoodsId,
+      nxOsNxGoodsId: goods.nxCgNxGoodsId,
       nxOsQuantity: this.data.amount,
       nxOsStandard: standard,
       nxOsPrice: price,
-      nxOsGoodsFatherId: goods.nxCgGoodsFatherId,
+      nxOsCommunityGoodsFatherId: goods.nxCgCfGoodsFatherId,
       nxOsCommunityGoodsId: goods.nxCommunityGoodsId,
       nxOsSubtotal: this.data.sub,
       nxOsGoodsSellType: goods.nxCgGoodsSellType,

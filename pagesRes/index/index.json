@@ -1,0 +1,8 @@
+{
+
+  
+  "usingComponents": {
+    "bigButton": "/components/bigButton/bigButton",
+    "group": "/components/group/group"
+  }
+}

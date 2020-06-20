@@ -72,10 +72,13 @@
       <text>我的订单</text>
       <text>></text>
     </view>
-    <view class="flex-row-between whiteBack with-padding ">
-      <text>我买过的</text>
+    <navigator url="/pagesRes/index/index">
+     <view class="flex-row-between whiteBack with-padding ">
+      <text>A我买过的</text>
       <text>></text>
     </view>
+    </navigator>
+   
   </view>
 
   <!-- 。/ -->

@@ -15,11 +15,11 @@
   <view class="address flex-column">
 
     <view class="flex-row">
-      <text class="reg-explain">送货地址</text>
+      <text class="reg-explain">收货地址</text>
       <view class="input-row flex-row">
      
         <view class="section">
-          <input class="buildingInput" type="text" placeholder-style='color:#9a9a9a;'  bindinput="bindKeyInput" value="{{customer.nxCustomerAddress}}"/>
+          <input class="buildingInput" type="text" placeholder-style='color:#9a9a9a;'  bindinput="bindKeyInput" value="{{aaa}}"/>
           <!--  bindtap="selectCommunity" -->
           <scroll-view scroll-y class="sug_info result {{showSug ? 'is-active' : ''}}" >
             <view class="result-row "   bindtap="clickCommunity"
@@ -33,7 +33,7 @@
     </view>
 
     <view class="flex-row">
-      <!-- <text class="reg-explain">门牌号</text> -->
+      <text class="reg-explain">门牌号</text>
       <view class="input-row flex-row">
         <view class="section">
           <input class="buildingInput" type="text" placeholder="请填写楼号-门牌号" placeholder-style='color:#9a9a9a;' value="{{customer.nxCustomerDeatilAddress}}" bindinput="bindAddressInput" ></input>

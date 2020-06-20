@@ -127,7 +127,8 @@
   margin-left: 40rpx;
 }
 
-.triangle.is-active {
+.triangle.is-hidden {
+  display: none;
 }
 
 .goods_name {

@@ -1,7 +1,10 @@
 {
   "pages":[
-    "pages/index/index",
-        
+    "pagesRes/index/index",
+    "pagesPicker/pIndex/pIndex",
+    "pagesPicker/userInfo/userInfo",
+
+    "pages/index/index",        
     "pages/register/register",      
     "pages/order/order",
     "pages/sign/sign",
@@ -15,7 +18,13 @@
     "pages/templatesPage/templatesPage",
     "pages/addTemplate/addTemplate",
     "pages/templateDetail/templateDetail",
-    "pages/saleGoods/saleGoods"
+    "pages/saleGoods/saleGoods",
+
+    "pagesRes/userInfo/userInfo",
+    "pagesRes/orderGroup/orderGroup",
+ 
+    "pagesRes/resGoods/resGoods"
+
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -18,16 +18,43 @@ Page({
   },
 
   onShow: function () {
-    this._getInitData();
   },
 
   onLoad: function (options) {
+    console.log("index 生命周期 onload" + JSON.stringify(options))
+    //在此函数中获取扫描普通链接二维码参数
+    if(options.q){
+      // let q = decodeURIComponent(options.q);
+      // console.log("index 生命周期 onload url=" + q)
+      // console.log("index 生命周期 onload 参数 is_water=" + utils.getQueryString(q, 'is_water'))
+      // var is_water = utils.getQueryString(q, 'is_water');
+      // console.log(is_water);
+      // console.log("index 生命周期 onload 参数 access_token=" + utils.getQueryString(q, 'access_token'))
+      // var access_token = utils.getQueryString(q, 'access_token');
+      // console.log(access_token);
+      if (options.q){
+        let scan_url = decodeURIComponent(options.q);
+        console.log("scan_url:" + scan_url)
+
+         
+        let video_id = scan_url.match(/\d+/) //提取链接中的数字，也就是链接中的参数id，/\d+/ 为正则表达式
+       
+
+        }
+
+
+       
+
+    }
     this.setData({
-      communityId: options.nxCommunityId,
+      communityId: options.nxCommunityId
+    })
+
+    this._getInitData();
+    this.setData({
       customer:{
         nxCustomerCall: 1,
       }
-     
     })
   },
 // 绑定input输入 
@@ -61,13 +88,16 @@ bindKeyInput: function (e) {
     success: success
   });
 },
+
   _getInitData: function () {
     communityInfo(this.data.communityId)
       .then(res => {
         if (res) {
+          console.log(res.result)
           console.log(JSON.parse(res.result.data.nxCommunityPolygon).data )
           this.setData({
             nxCommunityPolygon: JSON.parse(res.result.data.nxCommunityPolygon).data,
+            nxCommunityDisId: res.result.data.nxCommunityDisId
           })
         }
       })
@@ -111,6 +141,7 @@ bindKeyInput: function (e) {
       console.log("zai")
       var customer ={
         nxCustomerCommunityId: this.data.communityId,
+        nxCustomerDisId: this.data.nxCommunityDisId,
         nxCustomerLat: lat,
         nxCustomerLng: lng,
         nxCustomerAddress: name, 
@@ -279,6 +310,8 @@ bindKeyInput: function (e) {
   // 获取全局键盘高度
   getDigitHeight: function (e) {
     getApp().globalData.digitBoardHeight = e.detail.height;
+    console.log(getApp().globalData.digitBoardHeight)
+    console.log("gaodu!!!")
   }
 
 

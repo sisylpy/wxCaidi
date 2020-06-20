@@ -1,0 +1,7 @@
+<!--components/group/group.wxml-->
+
+<view class='group' bindtap='togroup' >
+  <image class='url' src='{{url}}'></image>
+  <view class='name'>{{name}}</view>
+  <view class='num'>申请：{{num}}个</view>
+</view> 

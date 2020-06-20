@@ -59,13 +59,6 @@
 			"current": -1,
 			"list": [
 				{
-					"id": 0,
-					"name": "pages/register/register",
-					"pathName": "pages/register/register",
-					"query": "nxCommunityId=1",
-					"scene": null
-				},
-				{
 					"id": -1,
 					"name": "pages/index/index",
 					"pathName": "pages/index/index",
@@ -147,6 +140,54 @@
 					"name": "pages/saleGoods/saleGoods",
 					"pathName": "pages/saleGoods/saleGoods",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"query": "nxCommunityId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/caidiPage/caidiPage",
+					"pathName": "pages/caidiPage/caidiPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/index/index",
+					"pathName": "pagesRes/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "pagesRes/userInfo/userInfo",
+					"pathName": "pagesRes/userInfo/userInfo",
+					"query": "id=uaOV4n_OlKTo2RJ6AAAK",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/orderGroup/orderGroup",
+					"pathName": "pagesRes/orderGroup/orderGroup",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesPicker/pIndex/pIndex",
+					"pathName": "pagesPicker/pIndex/pIndex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesPicker/userInfo/userInfo",
+					"pathName": "pagesPicker/userInfo/userInfo",
 					"scene": null
 				}
 			]
