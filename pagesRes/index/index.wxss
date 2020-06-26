@@ -34,12 +34,9 @@
 
 }
 
-.intro{
-  /* width:550rpx; */
-  /* height: 200rpx; */
-  /* background: yellow; */
-  
-
+.success{
+  font-size: 38rpx;
+  margin-bottom: 10rpx;
  
 }
 

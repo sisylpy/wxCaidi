@@ -1,30 +1,15 @@
 
 
+<view class="with-padding">
 
-     <!-- <view class="face">
-    <image class="faceImage" src="{{userInfo.nxCustomerUserEntity.nxCuWxAvatarUrl}}" style="width:{{windowWidth/5}}rpx; height:{{windowWidth / 5}}rpx"></image>
-  </view> -->
-  
-    <!-- 用户 -->
-    <view class=' with-border-bottom with-padding whiteBack' bindtap="toMemberInfo" hover-class="hover">
-      <image class="icon margin-right " src="../../images/logo.jpg"></image>
-      <text class="">采购员</text>
-    </view>
+<view>店铺:{{depInfo.nxDepartmentName}}</view>
 
-    <!-- 商品 -->
-    <view class=' with-border-bottom with-padding whiteBack' bindtap="toRegister" hover-class="hover">
-      <image class="icon margin-right " src="../../images/logo.jpg"></image>
-      <text class="">订货员</text>
-    </view>
+</view>
 
-    <!-- 店铺 -->
-    <!-- <view class='with-padding with-border-bottom whiteBack' bindtap="toAnalyse" hover-class="hover">
-      <image class="icon margin-right" src="../../images/add.jpg"></image>
-      <text class="">订货</text>
-    </view> -->
-    
-<!-- 
-    <view class='with-padding whiteBack' bindtap="toFamily" hover-class="hover">
-      <image class="icon margin-right" src="../../images/logo.jpg"></image>
-      <text class="">*****</text>
-    </view> -->
+
+<view>
+<button  open-type="share" wx:for="{{subDepArr}}" wx:for-item="item" class="with-padding" >
+{{item.nxDepartmentName}}
+</button>
+
+</view>

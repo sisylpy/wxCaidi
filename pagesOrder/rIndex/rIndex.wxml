@@ -1,0 +1,54 @@
+<view class="flex-column">
+	<view class="flex-column-center" style="width: {{windowWidth}}rpx;">
+		<image src="../../images/order_icon.png" class="icon"></image>
+		<text style="font-size: 34rpx;">{{dep.nxDepartmentName}}订单</text>
+	</view>
+	<view class="with-padding ">
+		<view class="form" style="height: {{windowHeight - 140}}rpx;">
+			<view class="flex-row with-padding form_title" style="font-size: 34rpx;">
+				<text class="goods_name_title">商品</text>
+				<text class="goods_quantity">订货</text>
+				<text class="goods_status">称重</text>
+				<text class="goods_user">订货用户</text>
+			</view>
+			<view class="flex-column with-padding" style="font-size: 34rpx;">
+			<scroll-view scroll-y style="height: {{windowHeight - 360}}rpx;">
+				<view class="apply_row flex-row with-tb-padding" wx:for="{{applyArr}}" wx:for-item="item" wx:for-index="index">
+				  <text class="goods_index">{{index+ 1}}</text>
+					<text class="goods_name"> {{item.nxGoodsEntity.nxGoodsName}}</text>
+					<text class="goods_quantity">{{item.nxDoQuantity}}{{item.nxDoStandard}}</text>
+					<text class="goods_status" wx:if="{{item.nxDoStatus == 0}}">待称重</text>
+					<view class="goods_user flex-column-center">
+						<image class="faceImg" src="{{item.nxDepartmentUserEntity.nxDuWxAvartraUrl}}">
+						</image>
+						<text style="font-size:24rpx;">{{item.nxDepartmentUserEntity.nxDuWxNickName}}
+						</text>
+
+					</view>
+
+				</view>
+				<view style="height:240rpx;"></view>
+			</scroll-view>
+			
+			</view>
+		</view>
+
+
+	</view>
+
+
+</view>
+
+
+
+
+
+<view class="flex-column-center plusBtn" style="left:{{windowWidth - 180}}rpx">
+	<view class="abc" bindtap="toIbookCover">
+		<image class="icon_search" src="../../images/gouwuche.png"></image>
+	</view>
+	<view class="def" bindtap="toDepFatherGoods">
+		<text class="plus_text">+</text>
+	</view>
+
+</view>

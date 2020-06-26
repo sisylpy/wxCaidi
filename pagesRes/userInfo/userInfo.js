@@ -34,7 +34,8 @@ Page({
     this.setData({
       windowWidth: globalData.windowWidth * globalData.rpxR,
       windowHeight: globalData.windowHeight * globalData.rpxR,
-      id: options.id,
+      id: options.socketId,
+      disId: options.disId
     })
 
    var that = this
@@ -162,27 +163,16 @@ Page({
     //用户点击“确认”
     wx.getUserInfo({
       success: res => {
-
-
-// /////////
         wx.login({
           success: (res) => {
-
-             //显示mask
-        // this.setData({
-        //   show: true
-        // })
-
             var nxDepartmentUser = {
               nxDuWxNickName: e.detail.userInfo.nickName,
               nxDuWxAvartraUrl: e.detail.userInfo.avatarUrl,
-              nxDuCode:res.code
+              nxDuCode:res.code,
+              nxDuAdmin: 1,
+              nxDuDistributerId: this.data.disId,
             }
-            // this.setData({
-            //   [aaa]: user,
-            //   [customerCode]: code,
-            // })
-
+           
             saveUser(nxDepartmentUser)
               .then((res => {
                 console.log(res);

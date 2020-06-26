@@ -3,9 +3,11 @@
 const app = getApp()
 const globalData = getApp().globalData;
 
-// import {
-//   myApplys
-// } from '../../lib/apiStore.js'
+
+
+import {
+  groupInfo
+} from '../../lib/apiRestraunt'
 
 Page({
 
@@ -31,8 +33,9 @@ Page({
     this.setData({
       windowWidth: globalData.windowWidth * globalData.rpxR,
       windowHeight: globalData.windowHeight * globalData.rpxR,
-     
+      userId: options.userId
     })
+
     var now = new Date();
     var day = now.getDay();
     var weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
@@ -43,10 +46,30 @@ Page({
       date: date,
     })
 
+    this._getGroupInfo();
 
-    
   
+  },
 
+  _getGroupInfo(){
+    groupInfo(this.data.userId).then(res => {
+      if(res) {
+        console.log(res)
+        var subDeps = res.result.data.groupInfo.nxDepartmentEntities;
+        var usersAmount = 0;
+        subDeps.forEach(sub => {
+          var users = sub.nxDepartmentUserEntities.length;
+          console.log(users)
+          usersAmount = usersAmount + users;
+        });
+        this.setData({
+          groupInfo: res.result.data,
+          memberAmount: usersAmount
+          
+        })
+      }
+      wx.setStorageSync('groupInfo', res.result.data)
+    })
   },
   onShow:function() {
     //2，获取店内申请列表
@@ -66,20 +89,11 @@ getMyApplys:function(store) {
     })
 },
 
-//打开订货商品页面
-  addApply: function(e) {
+
+  toOrderGroup(){
     wx.navigateTo({
-      url: '../addOrder/addOrder?storeId=' + this.data.storeId,
+      url: '../orderGroup/orderGroup?depId=' + this.data.groupInfo.groupInfo.nxDepartmentId,
     })
-
-  },
-
-  //打开我的订货页面
-  storeApplys: function(){
-    wx.navigateTo({
-      url: '../addOrder/addOrder?storeId=' + this.data.storeId,
-    })
-
   },
 
 

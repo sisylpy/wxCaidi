@@ -1,0 +1,89 @@
+/* pagesOrder/rIndex/rIndex.wxss */
+
+page{
+  background: #f2f6f7;
+}
+
+.plusBtn{
+  position: fixed;
+  bottom: 60rpx;
+}
+
+.abc{
+  background: #d5eaec;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+  line-height: 110rpx;
+  text-align: center;
+
+}
+.icon_search{
+  width: 50rpx;
+  height: 40rpx;
+  margin-top: 35rpx;
+}
+.def{
+  background: #235055;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.plus_text{
+  line-height: 140rpx;
+  font-size: 60rpx;
+  color: #fff;
+}
+
+
+/*  */
+.goods_name_title{
+  display: block;
+  width: 40%;
+  /* background: red; */
+}
+
+.goods_index{
+  display: block;
+  width: 5%;
+}
+
+.goods_name{
+  display: block;
+  width: 35%;
+}
+.goods_quantity {
+  display: block;
+  width: 20%;
+  /* background: blue; */
+}
+.goods_status {
+  display: block;
+  width: 20%;
+  /* background: burlywood; */
+}
+.goods_user{
+  width: 20%;
+  /* background: yellow; */
+}
+.apply_row{
+  border-bottom: 1px dashed lightgray;
+}
+
+.faceImg{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+}
+
+.form{
+  background: #fff;
+  border-radius: 4rpx;
+}
+.form_title{
+  border-bottom: 1px dashed lightgray;
+ 
+}

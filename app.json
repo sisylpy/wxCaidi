@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pagesOrder/rIndex/rIndex",
+
     "pagesRes/index/index",
     "pagesPicker/pIndex/pIndex",
     "pagesPicker/userInfo/userInfo",
@@ -22,8 +24,19 @@
 
     "pagesRes/userInfo/userInfo",
     "pagesRes/orderGroup/orderGroup",
- 
-    "pagesRes/resGoods/resGoods"
+    "pagesRes/stepOne/stepOne",
+    "pagesRes/stepTwo/stepTwo",
+
+    "pagesRes/stepThree/stepThree",
+    "pagesRes/depUserInfo/depUserInfo",
+
+    "pagesRes/resGoods/resGoods",
+    "pagesOrder/ibookCover/ibookCover",
+    "pagesOrder/ibookCatalogue/ibookCatalogue",
+    "pagesOrder/ibookGoods/ibookGoods",
+    "pagesOrder/depGoodsCatalogue/depGoodsCatalogue"
+
+
 
   ],
   "window":{

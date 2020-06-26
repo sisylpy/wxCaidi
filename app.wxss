@@ -77,6 +77,44 @@
   background: #fb0;
 }
 
+.btn_main {
+  background: rgb(224, 223, 223);
+  color: rgb(100, 99, 99);
+  position: fixed;
+  bottom: 20rpx;
+  line-height: 100rpx;
+  width: 96%;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.btn_main.next{
+  background: #1ba0e5;
+  color: #fff;
+}
+
+.addBtn{
+  background: rgb(224, 223, 223);
+  color: rgb(100, 99, 99);
+  line-height: 100rpx;
+  width: 100%;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.addBtn.next{
+  background: #1ba0e5;
+  color: #fff;
+}
+
+
+.with-margin-top{
+  margin-top: 20rpx;
+}
+.with-lr-margin{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
 
 /* 点击效果 */
 .hover{
@@ -161,7 +199,6 @@
   justify-content: space-around;
   align-items: center;
 }
-
 
 
 .margin-right {

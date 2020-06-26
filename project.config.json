@@ -157,17 +157,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 14,
 					"name": "pagesRes/index/index",
 					"pathName": "pagesRes/index/index",
-					"query": "",
+					"query": "userId=1",
 					"scene": null
 				},
 				{
 					"id": 15,
 					"name": "pagesRes/userInfo/userInfo",
 					"pathName": "pagesRes/userInfo/userInfo",
-					"query": "id=uaOV4n_OlKTo2RJ6AAAK",
+					"query": "socketId=uaOV4n_OlKTo2RJ6AAAK&disId=10",
 					"scene": null
 				},
 				{
@@ -185,9 +185,66 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 18,
 					"name": "pagesPicker/userInfo/userInfo",
 					"pathName": "pagesPicker/userInfo/userInfo",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "pagesRes/chainStepOne/chainStepOne",
+					"pathName": "pagesRes/chainStepOne/chainStepOne",
+					"query": "depId=8",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "pagesRes/depUserInfo/depUserInfo",
+					"pathName": "pagesRes/depUserInfo/depUserInfo",
+					"query": "depId=1&disId=1",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "pagesOrder/rIndex/rIndex",
+					"pathName": "pagesOrder/rIndex/rIndex",
+					"query": "userId=11",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "pagesOrder/ibookGoods/ibookGoods",
+					"pathName": "pagesOrder/ibookGoods/ibookGoods",
+					"query": "fatherId=111& fatherName='根茎类'&color=#3e3e3e",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "pagesOrder/ibookCatalogue/ibookCatalogue",
+					"pathName": "pagesOrder/ibookCatalogue/ibookCatalogue",
+					"query": "fatherId=11",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesOrder/ibookCover/ibookCover",
+					"pathName": "pagesOrder/ibookCover/ibookCover",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "pagesRes/stepOne/stepOne",
+					"pathName": "pagesRes/stepOne/stepOne",
+					"query": "disId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/stepThree/stepThree",
+					"pathName": "pagesRes/stepThree/stepThree",
+					"query": "",
 					"scene": null
 				}
 			]

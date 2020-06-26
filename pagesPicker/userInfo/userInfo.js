@@ -22,7 +22,7 @@ Page({
     this.setData({
       windowWidth: globalData.windowWidth * globalData.rpxR,
       windowHeight: globalData.windowHeight * globalData.rpxR,
-      id: options.id,
+      disId: options.id,
     })
 
   },
@@ -49,17 +49,23 @@ Page({
         //   show: true
         // })
 
-            var nxDepartmentUser = {
-              nxDuWxNickName: e.detail.userInfo.nickName,
-              nxDuWxAvartraUrl: e.detail.userInfo.avatarUrl,
-              nxDuCode:res.code
+            var nxDistributerUser = {
+              nxDiuDistributerId: this.data.disId,
+              nxDiuWxAvartraUrl: e.detail.userInfo.avatarUrl,
+              nxDiuWxNickName: e.detail.userInfo.nickName,
+              nxDiuCode:res.code,
+              roleEntities: [
+                {
+                  nxDurRoleId: 3,
+                }
+              ]
             }
             // this.setData({
             //   [aaa]: user,
             //   [customerCode]: code,
             // })
 
-            saveUser(nxDepartmentUser)
+            savePickerUser(nxDistributerUser)
               .then((res => {
                 console.log(res);
                 this.setData({
