@@ -89,7 +89,7 @@
 .cate_name{
   display: flex;
   flex-flow: row nowrap;
-  font-size: 30rpx;
+  font-size: 38rpx;
   /* color: #fff; */
 
 }

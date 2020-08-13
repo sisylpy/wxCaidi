@@ -20,12 +20,3 @@
   float: left;
   margin-left: 45rpx;
 }
-
-.btnline {
-  height: 1rpx;
-  background: lightgray;
-  width: 620rpx;
-  float: right;
-  margin-top: -4rpx;
-  /* position: relative; */
-}

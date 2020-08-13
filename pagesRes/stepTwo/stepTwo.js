@@ -14,6 +14,7 @@ Page({
     showNumber: false,
     selNumber: "",
     addFinished: false,
+    value: 0,
   
   },
 
@@ -28,10 +29,10 @@ Page({
     this.setData({
      
       second_height: globalData.windowHeight - globalData.windowWidth / 750 * 120 - (globalData.windowWidth / 750) * 94,
-      type: options.type,
       windowWidth: globalData.windowWidth * globalData.rpxR,
       windowHeight: globalData.windowHeight * globalData.rpxR,
-      disId: options.disId
+      disId: options.disId,
+      type: options.type,
     })
 
   },
@@ -52,6 +53,9 @@ Page({
          var dep = {
           nxDepartmentFatherId: this.data.depId,
            nxDepartmentName: null,
+           nxDepartmentType: this.data.type,
+           nxDepartmentHasSubs: 0,
+           nxDepartmentSubAmount: 0
           };
           deps.push(dep);
     }
@@ -103,7 +107,24 @@ Page({
     })
    },
 
+   
+   radioChange: function (e) {
+    console.log(e);
+    this.setData({
+      husSubs: e.detail.value,
+      selNumber: ""
+    })  
 
+  },
+
+  hideNumber(){
+
+    if(this.data.showNumber){
+      this.setData({
+        showNumber: false
+      })
+    }
+  },
 
 
 

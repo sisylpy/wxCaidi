@@ -1,0 +1,79 @@
+<view class="liziBack">
+
+
+	<view class="top flex-row-center whiteBack margin_bottom">
+
+   <view class="img_view">
+	 <image  class="top_img" src="../../images/r.jpg" style="width:{{windowWidth - 40}}rpx; height:300rpx;"></image>
+	 </view>
+		
+
+		<!-- aaa -->
+			<view class="flex-column-center " style="margin-top:-{{windowWidth/6}}rpx;">
+				<image src="{{face}}" class="face_img" style="width:{{windowWidth/4}}rpx; height:{{windowWidth/4}}rpx; "></image>
+				<text class="normal">{{name}}配送</text>
+			</view>
+	
+
+		<!-- bbb -->
+		<view class="flex-cloumn small">
+			<view class="flex-row with-padding">
+			 <image src="../../images/logo.jpg" class="icon margin-right"></image>
+				<text>业务联系:</text>
+				<text> 13910825707 李树国</text>
+			</view>
+			<view class="with-lr-padding">
+			 <image src="../../images/logo.jpg" class="icon margin-right"></image>
+				<text>地址: </text>
+				<text>京贸物联蔬菜2号厅3123</text>
+			</view>
+
+
+
+		</view>
+
+	</view>
+
+
+
+	
+	<view class="felx-column   whiteBack  normal" wx:for="{{goodsList}}" wx:for-item="greatGrand" wx:for-index="greatGrandIndex">
+		<view class="with-border-bottom with-padding ">
+		 <text class="great_grand_name1 explain-words">{{greatGrand.nxGoodsName}}</text>
+		</view>
+
+		<view class="felx-column" wx:for="{{greatGrand.nxGoodsEntityList}}"
+		 wx:for-item="grand" wx:for-index="grandIndex">
+			<view class=" with-padding with-border-bottom flex-row-between" bindtap="showOrHide" 
+				data-greatindex="{{greatGrandIndex}}" data-grandindex="{{grandIndex}}"
+			>
+				<text class="normal ">{{grand.nxGoodsName}}</text>
+				<image src="../../images/jian.png" class="icon with-lr-padding" wx:if="{{grand.isShow}}"></image>
+				<image src="../../images/jia.png" class="icon with-lr-padding" wx:else></image>
+			</view>
+			<!-- father hide -->
+			<view class="with-padding with-border-bottom hideView {{grand.isShow ? 'is-active' : ''}}"  wx:for="{{grand.nxGoodsEntityList}}" wx:for-item="father" wx:for-index="fatherIndex" bindtap="toGoodsList" data-id="{{father.nxGoodsId}}" hover-class="hover" data-name="{{father.nxGoodsName}}">
+			  <view class="with-lr-padding flex-row-between ">
+				<!-- {{greatGrandIndex + 1}}.{{grandIndex + 1}}.{{fatherIndex + 1}}   -->
+					<text class=" middle">{{father.nxGoodsName}}
+				</text>
+				<image src="../../images/jiantou.png" class="iconsmall with-lr-padding"></image>
+				</view>
+			
+
+			</view>
+
+			<view>
+				<!-- <text class="explain-words ">{{grand.subAmount}}个 商品</text> -->
+			</view>
+		</view>
+
+	</view>
+
+
+
+
+
+
+
+</view>

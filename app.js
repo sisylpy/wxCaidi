@@ -1,5 +1,17 @@
 //app.js
 App({
+  globalData: {
+    currentMonthData: [],
+    nickname: null,
+    avatarUrl: null,
+    windowWidth: null,
+    widowHeight: null,
+    platform: "",
+    disId: null,
+    userInfo: null,
+    tab1Index: null,
+  },
+  
   onLaunch: function () {
 
     wx.getSystemInfo({
@@ -24,5 +36,24 @@ App({
       }
     })
 
+  },
+
+  getPlatform: function () { //获取客户端平台
+    console.log(this.globalData)
+    console.log("thithitithtiitisissss")
+    return this.globalData["platform"]
+  },
+
+
+  BLEInformation:{
+    platform: "",
+    deviceId: null,
+    writeCharaterId: "",    
+    writeServiceId: "",
+    notifyCharaterId: "",
+    notifyServiceId: "",
+    readCharaterId: "",
+    readServiceId: "",
   }
+
 })

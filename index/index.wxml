@@ -1,0 +1,6 @@
+<view>
+ <button type="primary" class="btn" bindtap="toRes">采购员</button>
+ <button type="primary" class="btn" bindtap="toOrder">订货员</button>
+ <button type="primary" class="btn" bindtap="toIssue">开票员</button>
+ <button type="primary" class="btn" bindtap="toComm">社区居民</button>
+</view>

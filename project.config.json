@@ -60,8 +60,71 @@
 			"list": [
 				{
 					"id": -1,
+					"name": "index/index",
+					"pathName": "index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "pages/index/index",
 					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pagesRes/index/index",
+					"pathName": "pagesRes/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "pagesRes/userInfo/userInfo",
+					"pathName": "pagesRes/userInfo/userInfo",
+					"query": "socketId=uaOV4n_OlKTo2RJ6AAAK&disId=10",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/orderGroup/orderGroup",
+					"pathName": "pagesRes/orderGroup/orderGroup",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pagesRes/depUserInfo/depUserInfo",
+					"pathName": "pagesRes/depUserInfo/depUserInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pagesRes/stepOne/stepOne",
+					"pathName": "pagesRes/stepOne/stepOne",
+					"query": "disId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/stepThree/stepThree",
+					"pathName": "pagesRes/stepThree/stepThree",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesPicker/pIndex/pIndex",
+					"pathName": "pagesPicker/pIndex/pIndex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "pagesOrder/rIndex/rIndex",
+					"pathName": "pagesOrder/rIndex/rIndex",
 					"query": "",
 					"scene": null
 				},
@@ -157,59 +220,10 @@
 					"scene": null
 				},
 				{
-					"id": 14,
-					"name": "pagesRes/index/index",
-					"pathName": "pagesRes/index/index",
-					"query": "userId=1",
-					"scene": null
-				},
-				{
-					"id": 15,
-					"name": "pagesRes/userInfo/userInfo",
-					"pathName": "pagesRes/userInfo/userInfo",
-					"query": "socketId=uaOV4n_OlKTo2RJ6AAAK&disId=10",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pagesRes/orderGroup/orderGroup",
-					"pathName": "pagesRes/orderGroup/orderGroup",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pagesPicker/pIndex/pIndex",
-					"pathName": "pagesPicker/pIndex/pIndex",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": 18,
 					"name": "pagesPicker/userInfo/userInfo",
 					"pathName": "pagesPicker/userInfo/userInfo",
 					"query": "id=1",
-					"scene": null
-				},
-				{
-					"id": 19,
-					"name": "pagesRes/chainStepOne/chainStepOne",
-					"pathName": "pagesRes/chainStepOne/chainStepOne",
-					"query": "depId=8",
-					"scene": null
-				},
-				{
-					"id": 20,
-					"name": "pagesRes/depUserInfo/depUserInfo",
-					"pathName": "pagesRes/depUserInfo/depUserInfo",
-					"query": "depId=1&disId=1",
-					"scene": null
-				},
-				{
-					"id": 21,
-					"name": "pagesOrder/rIndex/rIndex",
-					"pathName": "pagesOrder/rIndex/rIndex",
-					"query": "userId=11",
 					"scene": null
 				},
 				{
@@ -234,16 +248,72 @@
 					"scene": null
 				},
 				{
-					"id": 25,
-					"name": "pagesRes/stepOne/stepOne",
-					"pathName": "pagesRes/stepOne/stepOne",
-					"query": "disId=1",
+					"id": -1,
+					"name": "pagesOrder/depGoods/depGoods",
+					"pathName": "pagesOrder/depGoods/depGoods",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pagesRes/stepThree/stepThree",
-					"pathName": "pagesRes/stepThree/stepThree",
+					"name": "pagesOrder/depGoodsCatalogue/depGoodsCatalogue",
+					"pathName": "pagesOrder/depGoodsCatalogue/depGoodsCatalogue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 29,
+					"name": "pagesIssue/issuePage/issuePage",
+					"pathName": "pagesIssue/issuePage/issuePage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 30,
+					"name": "pagesIssue/customerList/customerList",
+					"pathName": "pagesIssue/customerList/customerList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/resGoods/resGoods",
+					"pathName": "pagesRes/resGoods/resGoods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/inviteAndOrder/inviteAndOrder",
+					"pathName": "pagesRes/inviteAndOrder/inviteAndOrder",
+					"query": "depFatherId=7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesOrder/resGoodsList/resGoodsList",
+					"pathName": "pagesOrder/resGoodsList/resGoodsList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/disGoodsCata/disGoodsCata",
+					"pathName": "pagesRes/disGoodsCata/disGoodsCata",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/disGoodsList/disGoodsList",
+					"pathName": "pagesRes/disGoodsList/disGoodsList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pagesRes/friendShare/friendShare",
+					"pathName": "pagesRes/friendShare/friendShare",
 					"query": "",
 					"scene": null
 				}

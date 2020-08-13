@@ -1,54 +1,207 @@
 <!--pagesD/index/index.wxml-->
+<import src='../../template/independentOperation/independentOperation.wxml' />
 
-<view class='flex-column'>
+<view class="liziBack">
 
-	<!-- 用户 openid -->
-	<view class="top with-padding" style="width:{{windowWidth - 40}}rpx;">
-
-		<view class='dateGroup'>
-			<view id='week' class="">{{week}}</view>
-			<view id='date'>{{date}}</view>
-		</view>
-		<view class='intro with-lr-padding' style="width:{{windowWidth - 180}}rpx;" wx:if="{{memberAmount > 0}}">
-			订货34个菜品，完成30个，待称重3个，无货1个。
-		</view>
-		<view class='intro with-lr-padding flex-column' style="width:{{windowWidth - 180}}rpx;" wx:else>
-			<text class='success' > {{groupInfo.groupInfo.nxDepartmentName}}.订货群注册成功！</text>
-			<text>请采购员(您)邀请订货部门的同事加入订货群。</text>
-		</view>
-	</view>
-
-	<!-- 按钮 buttons -->
 	<view class='flex-column'>
-		<bigButton content="{{twoName}}" imgUrl="{{twoUrl}}" bindtoWhere="toibook"></bigButton>
-		<bigButton content="{{oneName}}" imgUrl="{{oneUrl}}" bindtoWhere="toOrderGroup"></bigButton>
+
+		<view class="setting with-border-bottom whiteBack flex-row-between with-lr-padding" bindtap="toOrderGroup">
+			<text>{{groupInfo.nxDepartmentName}}.订货群</text>
+			<image src="../../images/del.png" class="icon"></image>
+		</view>
+
+		<!-- 用户 openid -->
+		<view class="top with-padding whiteBack" style="width:{{windowWidth - 40}}rpx;">
+
+			<view class='dateGroup'>
+				<view id='week' class="">{{week}}</view>
+				<view id='date'>{{date}}</view>
+			</view>
+			<view class='with-lr-padding date_words' style="width:{{windowWidth - 180}}rpx;" wx:if="{{ordersArr.length > 0}}">今天
+				<text class="try">配送订单</text>
+				共34个菜品,待称重3个,完成称重3个,无货1个。
+			</view>
+			<view class='with-lr-padding flex-column' style="width:{{windowWidth - 180}}rpx;" wx:else>
+				<text class='success' > </text>
+				<text>请采购员(您)邀请订货部门的同事加入订货群。</text>
+			</view>
+		</view>
+
+		<!-- 按钮 buttons -->
+		<view class='flex-column whiteBack '>
+			<bigButton content="{{oneName}}" imgUrl="{{oneUrl}}" bindtoWhere="toDepartmentGoods"></bigButton>
+
+			<view class="big_button_line grayLine" style="width:{{windowWidth - 115}}rpx;"></view>
+			<bigButton content="{{twoName}}" imgUrl="{{twoUrl}}" bindtoWhere="toOpenOrder"></bigButton>
+
+		</view>
+
+		<!-- 申请 applys -->
+		<view class='groups'>
+			<view class="flex-row-between with-lr-padding">
+				<!-- <view class="try2">自采购订单</view> -->
+				<!-- <view class="flex-row">
+				<view class="flex-column-center margin-right" bindtap="changeShowWhich" data-which="0">
+					<image src="../../images/logo.jpg" class="icon"></image>
+					<text class="icon_text  {{showWhich == 0 ? 'is-active' : ''}}">配送</text>
+				</view>
+				<view class="flex-column-center" bindtap="changeShowWhich" data-which="1">
+					<image src="../../images/logo.jpg" class="icon"></image>
+					<text class="icon_text {{showWhich == 1 ? 'is-active' : ''}}">自采购</text>
+				</view>
+			</view> -->
+			</view>
+
+
+			<view class=" margin_bottom with-border-bottom whiteBack" >
+				<view class="with-padding with-border-bottom">
+					8月13日(今天)
+				</view>
+				<view class="flex-column with-padding with-border-bottom {{independentArr.length == 1 || independentArr.length == index+1 ? 'is-last': ''}}  apply {{item.isSelected ? 'is-active' :''}}" wx:for="{{independentArr}}" wx:for-index="index" bindtap="selectIndepend" data-index="{{index}}" hover-class="hover">
+					<view class="flex-row-default  with-r-padding ">
+						<view class="flex-row">
+
+							<view class="sel-part" style="width: {{windowWidth/8}}rpx; ">
+								<view class="flex-column-center" wx:if="{{item.nxDioApplyStatus == 0}}">
+									<image class="icon_sel " src="{{item.isSelected ? '../../images/sel2.png' : '../../images/nosel.png'}}"></image>
+								</view>
+
+								<view class="flex-column-center" wx:if="{{item.nxDioApplyStatus == 1}}">
+									<text class="order_time">{{item.nxDioOperationTime}}</text>
+									<view class="flex-row">
+										<image class="icon_sel " src="../../images/download.png"></image>
+										<text class="order_time">复制</text>
+									</view>
+								</view>
+								<view class="flex-column-center" wx:if="{{item.nxDioApplyStatus == 3}}">
+									<text class="order_time">{{item.nxDioOperationTime}}</text>
+									<view class="flex-row">
+										<image class="icon_sel " src="../../images/duihao.png"></image>
+										<text class="order_time">完成</text>
+									</view>
+								</view>
+
+							</view>
+
+
+
+
+							<view class="flex-row  normal {{item.nxDioApplyStatus > 0 ? 'gray' : ''}}">
+								<text class="margin-right ">{{item.nxDepIndependentGoodsEntity.nxDigGoodsName}}</text>
+								<text class="margin-l-right">{{item.nxDioApplyQuantity}}{{item.nxDioApplyStandard}}</text>
+							</view>
+						</view>
+
+						<view class="order_info">
+							<text class="order_user gray margin-l-right">{{item.nxDepartmentUserEntity.nxDuWxNickName}}</text>
+							<text class="order_time ">{{item.nxDioApplyTime}}</text>
+						</view>
+						<!-- <view wx:if="{{item.nxDioApplyStatus > 0}}">
+						<text>您于</text>
+						<text>{{item.nxDioOperationTime}}</text>
+						<text wx:if="{{item.nxDioApplyStatus == 3}}">完成</text>
+						<text wx:if="{{item.nxDioApplyStatus == 1}}">复制</text>
+
+					</view> -->
+
+
+					</view>
+				</view>
+			</view>
+
+			<view class="whiteBack">
+				<view class="with-padding with-border-bottom">
+				8月12日(昨天)
+				</view>
+				<view class="flex-column with-padding with-border-bottom {{independentArr.length == 1 || independentArr.length == index+1 ? 'is-last': ''}}  apply {{item.isSelected ? 'is-active' :''}}" wx:for="{{independentArr}}" wx:for-index="index" bindtap="selectIndepend" data-index="{{index}}" hover-class="hover">
+					<view class="flex-row-default  with-r-padding ">
+						<view class="flex-row">
+
+							<view class="sel-part" style="width: {{windowWidth/8}}rpx; ">
+								<view class="flex-column-center" wx:if="{{item.nxDioApplyStatus == 0}}">
+									<image class="icon_sel " src="{{item.isSelected ? '../../images/sel2.png' : '../../images/nosel.png'}}"></image>
+								</view>
+
+								<view class="flex-column-center" wx:if="{{item.nxDioApplyStatus == 1}}">
+									<text class="order_time">{{item.nxDioOperationTime}}</text>
+									<view class="flex-row">
+										<image class="icon_sel " src="../../images/download.png"></image>
+										<text class="order_time">复制</text>
+									</view>
+								</view>
+								<view class="flex-column-center" wx:if="{{item.nxDioApplyStatus == 3}}">
+									<text class="order_time">{{item.nxDioOperationTime}}</text>
+									<view class="flex-row">
+										<image class="icon_sel " src="../../images/duihao.png"></image>
+										<text class="order_time">完成</text>
+									</view>
+								</view>
+
+							</view>
+
+
+
+
+							<view class="flex-row  normal {{item.nxDioApplyStatus > 0 ? 'gray' : ''}}" >
+								<text class="margin-right ">{{item.nxDepIndependentGoodsEntity.nxDigGoodsName}}</text>
+								<text class="margin-l-right">{{item.nxDioApplyQuantity}}{{item.nxDioApplyStandard}}</text>
+							</view>
+						</view>
+
+						<view class="order_info">
+							<text class="order_user gray margin-l-right">{{item.nxDepartmentUserEntity.nxDuWxNickName}}</text>
+							<text class="order_time ">{{item.nxDioApplyTime}}</text>
+						</view>
+						<!-- <view wx:if="{{item.nxDioApplyStatus > 0}}">
+						<text>您于</text>
+						<text>{{item.nxDioOperationTime}}</text>
+						<text wx:if="{{item.nxDioApplyStatus == 3}}">完成</text>
+						<text wx:if="{{item.nxDioApplyStatus == 1}}">复制</text>
+
+					</view> -->
+
+
+					</view>
+				</view>
+			</view>
+
+
+
+
+		</view>
 	</view>
 
-	<!-- 申请 applys -->
-	<!-- <view class='groups'>
-    <view class='titlename'>今日订货：</view>
+</view>
 
-        <view class="half-box">
-            <view class="ul">
-              <view class="li  with-border-bottom {{applyArr.length == 1 || applyArr.length == index+1 ? 'is-last': ''}}" wx:for="{{applyArr}}">
-                <text class="name ">{{item.ckGoodsEntity.goodsName}}</text>
-                <text class="number">{{item.applyNumber}}{{item.applyStandardname}}</text>
-                <text class=" status" wx:if='{{item.applyStatus == "0"}}'>新申请</text>
-                <text class=" status" wx:elif='{{item.applyStatus == "1"}}'>出库中</text>
-                <text  class="status" wx:else>出库完成</text>
-                <text class="quantity" wx:if='{{item.applyStatus == "2"}}'>{{item.stockRecordEntity.quantity}}{{item.ckGoodsEntity.purStandardName}}</text>
-                <text class="price" wx:if='{{item.applyStatus == "2"}}'>{{item.stockRecordEntity.discountPrice}}元/{{item.ckGoodsEntity.purStandardName}}</text>
+<view class='plusBtn {{ !showOperation1  ? "hidden" : ""}}' style="left:{{windowWidth - 180}}rpx">
+	<view class="flex-column-center btn_item">
+		<view class="add_btn" bindtap="copyText">
+			<image class="icon_order" src="../../images/goods.png"></image>
+		</view>
+		<text class="btn_text">复制</text>
+	</view>
 
-              </view> 
-          </view>
-    </view>
+	<!-- <view class="flex-column-center btn_item">
 
+		<button class="add_btn" open-type="share" bindtap="toShare">
+					<image class="icon_order" src="../../images/goods.png"></image>
+		</button>
+				<text class="btn_text">微信预定</text>
 
-    
-  </view> -->
+	</view> -->
+
+	<view class="flex-column-center btn_item">
+		<view class="add_btn" bindtap="finishIndependent">
+			<image class="icon_order" src="../../images/goods.png"></image>
+		</view>
+		<text class="btn_text ">完成</text>
+
+	</view>
 
 
 
 
 
 </view>
+
+<template is="independentOperation" data='{{selAmount:selAmount}}'></template>

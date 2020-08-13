@@ -1,0 +1,9 @@
+{"navigationBarTitleText": "商品",
+  "navigationBarBackgroundColor": "#1e82b4",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "mymodal": "/components/mymodal/mymodal",
+    "myIndependent": "/components/myIndependent/myIndependent"
+
+  }
+}

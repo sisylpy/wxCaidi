@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "商品管理",
+  "navigationBarBackgroundColor": "#234b50",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "addIndependent": "/components/addIndependent/addIndependent" 
+
+  }
 }

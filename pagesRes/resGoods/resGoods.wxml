@@ -1,2 +1,114 @@
-<!--pagesRes/resGoods/resGoods.wxml-->
-<text>pagesRes/resGoods/resGoods.wxml</text>
+<view class="liziBack">
+
+
+	<view class='navbar whiteBack  with-border-bottom-main normal'>
+		<block wx:for="{{tabs}}" wx:key="*this">
+			<view id="{{index}}" class="navbar-item {{tab1Index==index?'bar-item-on':''}}" data-index='{{index}}' bindtap='onTab1Click'>
+				<view class='navbar-title'>{{item}}</view>
+			</view>
+		</block>
+		<view class="navbar-slider" style="left: {{sliderLeft}}px; width:{{windowWidth /2}}rpx; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+	</view>
+
+
+
+
+	<view class="">
+
+		<swiper style="height: {{windowHeight - 100}}rpx;" bindtransition="swiperTran" bindanimationfinish="animationfinish" current="{{itemIndex}}" bindchange='swiperChange' data-index='{{itemIndex}}'>
+
+			<!-- Part-one -->
+			<swiper-item>
+				<scroll-view scroll-y style="height:{{windowHeight - 100}}rpx">
+					<!--  -->
+					<view class="flex-column" wx:if="{{depGoodsArr.length  == 0}}" style="height:{{windowHeight - 100}}rpx;">
+						<view class="abc"> 请在配送商品目录中下载您将订货的商品</view>
+					</view>
+					<!--  -->
+					<view class="liziBack" wx:else>
+
+						<view class="felx-column   whiteBack  normal" wx:for="{{depGoodsArr}}" wx:for-item="greatGrand" wx:for-index="greatGrandIndex">
+							<view class="with-border-bottom with-padding ">
+								<text class="great_grand_name1 small gray">{{greatGrand.nxGoodsName}}</text>
+							</view>
+
+							<view class="felx-column" wx:for="{{greatGrand.nxGoodsEntityList}}" wx:for-item="grand" wx:for-index="grandIndex">
+								<view class=" with-padding with-border-bottom flex-row-between" bindtap="showOrHide" data-greatindex="{{greatGrandIndex}}" data-grandindex="{{grandIndex}}">
+									<text class="middle ">{{grand.nxGoodsName}}</text>
+									<image src="../../images/jian.png" class="icon with-lr-padding" wx:if="{{grand.isShow}}"></image>
+									<image src="../../images/jia.png" class="icon with-lr-padding" wx:else></image>
+								</view>
+								<!-- father hide -->
+								<view class="with-padding with-border-bottom hideView {{grand.isShow ? 'is-active' : ''}}" wx:for="{{grand.nxGoodsEntityList}}" wx:for-item="father" wx:for-index="fatherIndex" bindtap="toGoodsList" data-id="{{father.nxGoodsId}}" hover-class="hover" data-name="{{father.nxGoodsName}}">
+									<view class="with-lr-padding flex-row-between ">
+										<!-- {{greatGrandIndex + 1}}.{{grandIndex + 1}}.{{fatherIndex + 1}}   -->
+										<text class=" small">{{father.nxGoodsName}}
+										</text>
+										<image src="../../images/jiantou.png" class="iconsmall with-lr-padding"></image>
+									</view>
+
+
+								</view>
+
+								<view>
+									<!-- <text class="explain-words ">{{grand.subAmount}}个 商品</text> -->
+								</view>
+							</view>
+
+						</view>
+
+					</view>
+				</scroll-view>
+				<view class='plusBtn' style="left:{{windowWidth - 180}}rpx">
+				<view class="order_btn" bindtap="toDistributerGoods">
+						<image class="icon_order" src="../../images/goods.png"></image>
+					</view>
+					</view>
+
+			</swiper-item>
+
+			<!-- ../Part-one  -->
+
+			<swiper-item>
+				<scroll-view scroll-y style="height:{{windowHeight - 120}}rpx">
+
+
+					<view class=" whiteBack" wx:for="{{independentArr}}">
+						<view class="whiteBack with-padding with-border-bottom flex-column">
+							<view class="small gray">{{item.letter}}</view>
+						</view>
+						<view class="with-border-bottom whiteBack with-padding flex-row-between" wx:for="{{item.list}}" wx:for-item="goods">
+							<view class="middle">{{goods.nxDigGoodsName}}({{goods.nxDigGoodsStandardname}})</view>
+							<view>
+								<image src="../../images/logo.jpg" class="icon"></image>
+							</view>
+						</view>
+					</view>
+
+				</scroll-view>
+
+				<view class='plusBtn' style="left:{{windowWidth - 180}}rpx">
+		
+					<view class="order_btn" bindtap="toShowIndependent">
+						<image class="icon_order" src="../../images/goods.png"></image>
+					</view>
+				</view>
+
+			</swiper-item>
+
+
+
+
+		</swiper>
+	</view>
+
+
+
+
+
+
+
+</view>
+
+
+<addIndependent show="{{showIndependent}}" bindconfirm="confirmAdd" item="{{item}}" standardName="{{standardName}}" />

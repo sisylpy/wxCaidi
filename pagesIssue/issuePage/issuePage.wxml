@@ -1,0 +1,149 @@
+<!--pages/storeApplys/storeApplys.wxml-->
+<view class="customerApply ">
+
+	<view class="section flex-column with-tb-padding">
+		<view class="section_head">
+			<view class="flex-column with-padding">
+				<text class="print_title">送货单</text>
+				<view class="flex-row with-tb-padding">
+					<text>日期:</text>
+					<text>{{date}}</text>
+				</view>
+
+				<view class="flex-row with-tb-padding">
+					<text>客户:</text>
+					<text class="depName">{{depName}}</text>
+				</view>
+			</view>
+
+			<view class="flex-row with-padding with-border-bottom small">
+			  <text class="index">序号</text>
+				<text class="goods_name">商品</text>
+				<text class="weight">数量</text>
+				<text class="order_price">单价</text>
+				<text class="subtotalTitle">小计</text>
+			</view>
+		</view>
+
+
+<!-- hasSubs == 0 -->
+
+		<view class="section_body small with-padding" wx:if="{{depHasSubs == 0}}">
+			<!-- <scroll-view scroll-y> -->
+				<view class="flex-column with-border-bottom  with-padding" wx:for="{{applyArr}}">
+
+					<view class="flex-cloumn">
+
+						<!-- <view class="flex-row-between">
+							<view class="flex-column">
+								<text class="">{{item.nxGoodsEntity.nxGoodsDetail}}</text>
+							</view>
+
+						</view> -->
+						<view class="flex-row">
+						  <text class="index">{{index + 1}}</text>
+							<text class="goods_name">{{item.nxGoodsEntity.nxGoodsName}}({{item.nxGoodsEntity.nxGoodsStandardname}})</text>
+							<input class="weight input weightInput" wx:if="{{item.nxDoWeight !== null}}" value="{{item.nxDoWeight}}{{item.nxGoodsEntity.nxGoodsStandardname}}" bindblur="getInputValue" data-type="1" data-index="{{index}}"></input>
+							<view class="order_price flex-row">
+								<input class="input priceInput " value='{{item.nxDoPrice !== null ? item.nxDoPrice : ""}}' bindblur="getInputValue" data-type="2" data-index="{{index}}"></input>
+								<!-- <text>/{{item.nxGoodsEntity.nxGoodsStandardname}}</text> -->
+							</view>
+
+							<text class="subtotal" wx:if="{{item.nxDoSubtotal !== null}}">{{item.nxDoSubtotal}}</text>
+						</view>
+
+						<view class="flex-row-between">
+							<view class="flex-column">
+								<text class="explain-words margin-right">订货:{{item.nxDoQuantity}}{{item.nxDoStandard}}</text>
+							</view>
+						</view>
+					</view>
+				</view>
+			<!-- </scroll-view> -->
+
+			<view class="flex-column with-padding  ">
+      <text class="total depName">总金额: {{total}}元</text>
+					<text class="depName">收货人(签字): </text>
+					<text> 日期: </text>
+				<view>
+
+				</view>
+			</view>
+
+		</view>
+<!--  ./ hasSubs == 0 -->
+
+
+<!-- hasSubs == 1 -->
+
+		<view class="section_body small with-padding" wx:if="{{depHasSubs == 1}}">
+			<!-- <scroll-view scroll-y> -->
+				<view class="flex-column" wx:for="{{depArr}}" wx:for-item="dep">
+				<text class="with-border-bottom with-padding">#{{dep.depName}}</text>
+ 
+					<view class="flex-cloumn  with-border-bottom  with-padding" wx:for="{{dep.depOrders}}" wx:for-item="item">
+						<view class="flex-row" >
+							 <text class="index">{{index + 1}}</text>
+							<text class="goods_name">{{item.nxGoodsEntity.nxGoodsName}}({{item.nxGoodsEntity.nxGoodsStandardname}})</text>
+							<input class="weight input weightInput" wx:if="{{item.nxDoWeight !== null}}" value="{{item.nxDoWeight}}{{item.nxGoodsEntity.nxGoodsStandardname}}" bindblur="getInputValue" data-type="1" data-index="{{index}}"></input>
+							<view class="order_price flex-row">
+								<input class="input priceInput " value='{{item.nxDoPrice !== null ? item.nxDoPrice : ""}}' bindblur="getInputValue" data-type="2" data-index="{{index}}"></input>
+								<!-- <text>/{{item.nxGoodsEntity.nxGoodsStandardname}}</text> -->
+							</view>
+
+							<text class="subtotal" wx:if="{{item.nxDoSubtotal !== null}}">{{item.nxDoSubtotal}}</text>
+						</view>
+
+						<!-- <view class="flex-row-between">
+							<view class="flex-column">
+								<text class="explain-words margin-right">订货:{{item.nxDoQuantity}}{{item.nxDoStandard}}</text>
+							</view>
+						</view> -->
+					</view>
+				</view>
+			<!-- </scroll-view> -->
+
+			<view class="flex-column with-padding  ">
+      <text class="total depName">总金额: {{total}}元</text>
+					<text class="depName">收货人(签字): </text>
+					<text> 日期: </text>
+				<view>
+
+				</view>
+			</view>
+
+		</view>
+<!--  ./ hasSubs == 1 -->
+
+
+	</view>
+
+
+</view>
+
+
+
+
+
+<view class="fixed_bottom flex-column">
+	<view class="flex-column with-padding">
+		<view class="flex-row" wx:if="{{depHasSubs == 0}}">订货:{{applyArr.length}}个</view>
+		<view class="flex-row" wx:if="{{depHasSubs == 1}}">订货:{{totalAmount}}个</view>
+
+		<view class="flex-row">完成:{{finished}}个</view>
+	</view>
+	<view class="flex-column with-padding">
+	<!--  printBLEData -->
+		<view class="main_btn" bindtap="_savePrintOrders" wx:if="{{setSuccess}}">
+			打印送货单
+		</view>
+    	<!-- <view class="main_btn" bindtap="toSetPrint" wx:else>
+			打印送货单 设置打印机
+		</view> -->
+	
+	 	<view class="main_btn" bindtap="_savePrintOrders" wx:else>
+			打印送货单 设置打印机
+		</view>
+	</view>
+
+</view>

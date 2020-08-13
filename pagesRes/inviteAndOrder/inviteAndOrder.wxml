@@ -1,0 +1,22 @@
+<view class="invite_page">
+
+	<view class="flex-column" style="height:{{windowHeight /3 * 2}}rpx;">
+		<view class="title normal">
+			邀请同事加入，大家从今天开始用手机订货吧！
+		</view>
+		<view class="small" style="text-align:center;">
+			配送鲜 是专门为生鲜配送的订货群小程序，完成多部门的采购任务。
+		</view>
+
+	</view>
+
+
+	<view class="flex-row-around btns">
+    <button class="middle_btn" open-type="share" style="width: {{(windowWidth - 140)/2}}rpx;">邀请同事</button>
+  	<button class="middle_btn openOrder"  bindtap="toOpenOrder" style="width: {{(windowWidth - 140)/2}}rpx;">订货</button>
+
+
+	</view>
+
+
+</view>

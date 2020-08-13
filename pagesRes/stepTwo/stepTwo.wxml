@@ -6,30 +6,43 @@
 		<image src="../../images/logo.jpg" class='url'></image>
 	</view>
 
-	<view class='with-padding with-margin-top with-lr-margin' style='height: {{windowHeight - 240}}rpx; background:white;'>
+	<view class='with-padding with-margin-top with-lr-margin' style='height: {{windowHeight - 340}}rpx; background:white;' bindtap="hideNumber">
 		<!-- 文字 -->
-		<view class='sub-title' wx:if="{{type == 1}}">设置餐馆</view>
-				<view class='sub-title' wx:elif="{{type == 2}}">设置单位、学校、幼儿园食堂</view>
+		<view class='sub-title'>是否分部门订货</view>
 
-		<view class='intro with-tb-padding' wx:if="{{type == 1}}">餐馆订货是按部门分组的</view>
-			<view class='intro with-tb-padding' wx:elif="{{type == 2}}">订货是按食堂分组的</view>
+		<radio-group class="radio-group with-padding" bindchange="radioChange">
+			<label class="radio">
+				<view class="flex-row with-tb-padding">
+					<radio value="0" checked="true" />
+					<text class='wxNumber'>不分部门</text>
+				</view>
 
-		<view class='type with-tb-padding'>
-			<view class="with-tb-padding" style="font-size: 38rpx;font-weight: 500;"  wx:if="{{type == 1}}">部门数量</view>
-				<view class="with-tb-padding" style="font-size: 38rpx;font-weight: 500;"  wx:elif="{{type == 2}}" >食堂数量</view>
+			</label>
+			<label class="radio">
+				<view class="flex-row with-tb-padding">
+					<radio value="1" />
+					<text class='wxNumber'>分部门</text>
+				</view>
+
+			</label>
+		</radio-group>
+
+		<view class='type with-tb-padding' wx:if="{{husSubs == 1}}">
+			<view class="with-tb-padding" style="font-size: 38rpx;font-weight: 500;">部门数量</view>
+
 			<view class="selcet_content">
 				<text style="margin-right:10rpx; margin-top:20rpx;">一共有</text>
-				<view class="flex-row" style="margin-right:20rpx;">
+				<view class="flex-row" style="margin-right:20rpx;" catchtap="showNumber">
 					<view class="flex-column">
-						<input class="numInput" style="width:{{windowWidth/5}}rpx; font-size: 40rpx;  height: 90rpx; line-height: 90rpx;padding-left: 20rpx; " disabled="true" value="{{selNumber}}"></input>
-						<scroll-view scroll-y class="result {{showNumber ? 'is-active' : ''}}" style="width: {{windowWidth/5}}rpx;">
-							<view style="width:{{windowWidth/4}}rpx;padding: 10rpx 20rpx; background:rgb(224, 223, 223); border-bottom: 1px soild lightgray;" class="flex-column result-row" wx:for="1234" wx:for-item="item" wx:for-index="index" bindtap="selIndex" data-index="{{index}}" hover-class="hover">
+						<input class="numInput" style="width:{{windowWidth/5}}rpx; font-size: 40rpx;  height: 90rpx; line-height: 90rpx; padding-left: 20rpx; " disabled="true" value="{{selNumber}}"></input>
+						<scroll-view scroll-y class="result {{showNumber ? 'is-active' : ''}}" style="width: {{windowWidth/5 + 20}}rpx; margin-top: 130rpx; ">
+							<view style="width:{{windowWidth/4}}rpx;padding: 10rpx 20rpx; background:#fff; border-bottom: 1px soild lightgray;" class="flex-column result-row" wx:for="12345" wx:for-item="item" wx:for-index="index" catchtap="selIndex" data-index="{{index}}" hover-class="hover">
 								{{item}}
 							</view>
 						</scroll-view>
 
 					</view>
-					<view class="nabla trigle" bindtap="showNumber"></view>
+					<view class="nabla trigle" catchtap="showNumber"></view>
 				</view>
 				<text style="margin-top:20rpx;" wx:if="{{type == 1}}">个部门</text>
 				<text style="margin-top:20rpx;"  wx:elif="{{type == 2}}">个食堂</text>
@@ -37,17 +50,11 @@
 			</view>
 		</view>
 
-		<view class='type with-tb-padding'>
-			<view class="with-tb-padding" style="font-size: 38rpx; font-weight: 500;" wx:if="{{type == 1}}">部门名称</view>
-						<view class="with-tb-padding" style="font-size: 38rpx; font-weight: 500;"   wx:elif="{{type == 2}}" >食堂名称</view>
+		<view class='type with-tb-padding' wx:if="{{selNumber  > 0}}">
+			<view class="with-tb-padding" style="font-size: 38rpx; font-weight: 500;">部门名称</view>
 
 			<view class="dep_content {{selNumber !== '' ? 'is-active' : ''}} flex-column">
 				<input wx:for="{{selNumber}}" wx:for-index="inputIndex" class="numInput" style="width:{{windowWidth/2}}rpx; font-size: 40rpx;  height: 80rpx; line-height: 80rpx;padding-left: 10rpx; margin-bottom:10rpx;" bindblur="getDepartmentName" data-index="{{inputIndex}}" value="{{departments.nxDepartmentName}}"></input>
-				<!-- 按钮 -->
-				<view class="flex-column-center " style="margin-top:40rpx;">
-					<view class="addBtn {{addFinished ? 'next' : ''}} " bindtap="{{addFinished ? 'toGroupName' : ''}}"> 下一步</view>
-				</view>
-
 
 			</view>
 
@@ -55,15 +62,15 @@
 
 		</view>
 
-
-
-
 	</view>
 
 
 
 
-
+	<!-- 按钮 -->
+	<view class="flex-column-center ">
+		<view class="btn_main next}} " catchtap='toGroupName'> 下一步</view>
+	</view>
 
 
 

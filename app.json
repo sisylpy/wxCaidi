@@ -1,8 +1,13 @@
 {
+  
   "pages":[
-    "pagesOrder/rIndex/rIndex",
-
     "pagesRes/index/index",
+
+    "pagesIssue/issuePage/issuePage",
+    "pagesIssue/customerList/customerList",
+    "pagesIssue/pSearchPrinter/pSearchPrinter",
+    "index/index",
+    "pagesOrder/rIndex/rIndex",
     "pagesPicker/pIndex/pIndex",
     "pagesPicker/userInfo/userInfo",
 
@@ -26,25 +31,26 @@
     "pagesRes/orderGroup/orderGroup",
     "pagesRes/stepOne/stepOne",
     "pagesRes/stepTwo/stepTwo",
-
     "pagesRes/stepThree/stepThree",
     "pagesRes/depUserInfo/depUserInfo",
-
     "pagesRes/resGoods/resGoods",
-    "pagesOrder/ibookCover/ibookCover",
-    "pagesOrder/ibookCatalogue/ibookCatalogue",
-    "pagesOrder/ibookGoods/ibookGoods",
-    "pagesOrder/depGoodsCatalogue/depGoodsCatalogue"
+    "pagesRes/resGoodsList/resGoodsList",
+    "pagesRes/disGoodsCata/disGoodsCata",
+    "pagesRes/disGoodsList/disGoodsList",
+    "pagesRes/inviteAndOrder/inviteAndOrder",
+    "pagesRes/friendShare/friendShare",
+    "pagesOrder/depGoodsCatalogue/depGoodsCatalogue",
+    "pagesOrder/depGoods/depGoods",
+    "pagesOrder/resGoodsList/resGoodsList"
 
 
 
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#234b50",
+    "navigationBarTitleText": "特鲜配",
+    "navigationBarTextStyle":"white"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

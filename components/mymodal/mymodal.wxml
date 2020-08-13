@@ -2,10 +2,10 @@
 <view class='mask' wx:if='{{show}}' catchtouchmove='ture'>
 	<view class='modal-content'>
 
-		<view class="top" style="background:#3e3e3e">
+		<view class="top">
 			<view class='goodsTitle'>
-				<text style="color: white">{{item.nxGoodsName}}</text>
-				<text class='smallclose' bindtap='cancle' style="color: white" >X</text>
+				<text>{{item.nxGoodsName}}</text>
+				<!-- <text class='smallclose' bindtap='cancle' style="color: white" >X</text> -->
 			</view>
 		</view>
 		<view class="body">
@@ -59,6 +59,15 @@
 			</view>
 
 			<view class='btn-wrapper'>
+			<view class="btn_left flex-row" wx:if="{{item.nxDepartmentGoodsId !== -1 }}">
+			<image src="../../images/download.png" class="sel_icon"></image>
+			<text>已加入订货模版</text>
+			</view>
+	<view class="btn_left flex-row" wx:else>
+			<image src="../../images/itemSel.png" class="sel_icon"></image>
+			<text>加入订货模版</text>
+			</view>
+
 				<view class="btn_row">
 					<text class='cancel-btn' bindtap="cancle">取消</text>
 					<text class='confirm-btn' catchtap='confirm'>确定</text>

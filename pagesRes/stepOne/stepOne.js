@@ -43,42 +43,21 @@ Page({
     this.setData({
      
       second_height: globalData.windowHeight - globalData.windowWidth / 750 * 120 - (globalData.windowWidth / 750) * 94,
-      disId: options.disId,
+      // disId: options.disId,
       windowWidth: globalData.windowWidth * globalData.rpxR,
       windowHeight: globalData.windowHeight * globalData.rpxR,
+      disId: 1,
     })
     // this._getUserInfo();
 
   },
 
-  // _getUserInfo(){
-  //   userInfo(this.data.userId).then(res =>{
-  //     if(res) {
-  //       console.log(res.result.data)
-  //       this.setData({
-  //         user: res.result.data
-          
-  //       })
-  //     }
-  //   })
-   
- 
-  // },
 
   toNext(){
-    if(this.data.type < 3){
-      wx.navigateTo({
-        url: '../stepTwo/stepTwo?type=' + this.data.type + '&disId=' + this.data.disId,
-      })
-    }else{
-      wx.navigateTo({
-        url: '../stepThree/stepThree?disId=' + this.data.disId + '&type=' + this.data.type,
-      })
-    }
-   
-
+    wx.navigateTo({
+      url: '../stepTwo/stepTwo?disId=' + this.data.disId + '&type=' + this.data.type,
+    })
   },
-
 
 
 

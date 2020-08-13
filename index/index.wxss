@@ -1,0 +1,7 @@
+.btn{
+  margin-bottom: 30rpx;
+  line-height: 100rpx;
+  padding: 20rpx 100rpx;
+  font-size: 38rpx;
+  width: 80%;
+}

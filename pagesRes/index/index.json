@@ -1,11 +1,11 @@
 {
 
-  "navigationBarTitleText": "李树国蔬菜配送",
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#234b50",
+  "navigationBarTextStyle": "white",
   
   "usingComponents": {
     "bigButton": "/components/bigButton/bigButton",
     "group": "/components/group/group"
   }
+  
 }

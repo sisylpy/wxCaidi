@@ -3,4 +3,3 @@
     <image src="{{imgUrl}}"  class='url'></image>
     <text class='content'>{{content}}</text>
   </view>
-  <view class='btnline'></view>

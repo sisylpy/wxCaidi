@@ -6,12 +6,43 @@
   width: 100%;
   height: 100%;
 }
+
+.liziBack{
+  background: #cce2df;
+}
 .wrapper {
   width: 100%;
   height: 100%;
   background: #f2f9fc;
 }
 
+.mainColor{
+  color: #187e6e;
+}
+.mainBack{
+  background: #187e6e;
+  color: #fff;
+}
+.topBack{
+  background: #234b50;
+  color: #fff;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+
+}
+.white{
+  color: #fff;
+}
+
+.gray{
+  color: gray;
+}
+.customerUrl {
+  height: 110rpx;
+  width: 100rpx;
+  border-radius: 2rpx;
+  border: 1px solid rgba(224, 224, 224, 0.753);
+}
 /* 块 */
 .section {
   margin-top: 10rpx;
@@ -37,7 +68,7 @@
   border-bottom: 1px solid rgba(231, 230, 230, 0.548);
 }
 .with-border-bottom-main {
-  border-bottom: 1px solid rgb(70, 69, 69);
+  border-bottom: 1px solid #464545;
 }
 .with-border-bottom.is-last {
   border-bottom: none;
@@ -47,6 +78,19 @@
   width: 40rpx;
   height: 40rpx;
 }
+
+.iconsmall{
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.icon_text{
+  font-size: 26rpx;
+}
+.icon_text.is-active{
+  color: #187e6e;
+}
+
 /* 按钮 */
 .fix-main-btn {
   position: fixed;
@@ -86,6 +130,14 @@
   width: 96%;
   text-align: center;
   border-radius: 10rpx;
+  margin-left: 2%;
+}
+.main_btn{
+  line-height: 80rpx;
+  background: #2d5a5f;
+  color: #fff;
+  border-radius: 10rpx;
+  text-align: center;
 }
 
 .btn_main.next{
@@ -108,6 +160,8 @@
 }
 
 
+
+
 .with-margin-top{
   margin-top: 20rpx;
 }
@@ -124,6 +178,9 @@
 /* 各种Padding */
 .with-padding {
   padding: 20rpx;
+}
+.with-s-padding{
+  padding: 10rpx;
 }
 .with-tb-padding {
   padding-top: 20rpx;
@@ -164,6 +221,11 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.flex-row-default {
+  display: flex;
+  flex-flow: row nowrap;
+}
 .flex-row-between {
   display: flex;
   flex-flow: row nowrap;
@@ -183,7 +245,9 @@
 }
 .flex-row-wrap{
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .flex-column {
@@ -222,10 +286,10 @@
 }
 
 .small{
-  font-size: 34rpx;
-}
-.middleBlack{
   font-size: 32rpx;
+}
+.middle{
+  font-size: 34rpx;
 }
 .normal{
   font-size: 38rpx;
@@ -278,4 +342,40 @@
   height: 1px;
   width: 100%;
   background: lightgray;
+}
+.big_button_line{
+  margin-left: 115rpx;
+}
+
+/*  */
+.order_user{
+  font-size: 30rpx;
+  
+  
+}
+.order_time{
+  font-size: 26rpx;
+  color: gray;
+}
+
+/*  */
+
+.shrink_fix{
+  flex-shrink: 0;
+}
+
+.shrink_change{
+  flex-shrink: 1;
+}
+
+.standard{
+  margin-right: 20rpx;
+  /* background: gray; */
+  /* color: #fff; */
+  border-radius: 10rpx;
+  padding: 5rpx 15rpx;
+  border: 1px solid lightgray;
+  font-size: 32rpx;
+  font-weight: 500;
+
 }

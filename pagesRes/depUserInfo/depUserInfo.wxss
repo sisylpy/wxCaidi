@@ -37,6 +37,9 @@ page {
  margin-right: 10rpx;
  margin-top: 20rpx;
 }
+.type.hidden{
+  display: none;
+}
 
 .selcet_content{
   display: flex;
@@ -92,4 +95,13 @@ page {
   line-height: 70rpx; 
   padding: 10rpx 10rpx;
   border-bottom: 1px solid lightgray;
+}
+
+/*  */
+button.addBtn{
+  padding: 0;
+  background: lightgray;
+  line-height: 90rpx;
+  font-weight: 400;
+  
 }

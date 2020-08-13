@@ -15,6 +15,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    role: 0
 
   },
 
@@ -22,12 +23,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     this.setData({
       second_height: globalData.windowHeight - globalData.windowWidth / 750 * 120 - (globalData.windowWidth / 750) * 94,
       userId: options.id,
       windowWidth: globalData.windowWidth * globalData.rpxR,
       windowHeight: globalData.windowHeight * globalData.rpxR,
       depId: options.depId,
+      nxDuDepartmentId: options.depId,
       showDepartment: false,
     })
     
@@ -65,6 +68,12 @@ Page({
 
   },
 
+  radioChange: function (e) {
+    console.log(e);
+    this.setData({
+      role:e.detail.value,
+    })
+  },
 
   //用户授权中链接socket
   getUserInfo: function(e) {
@@ -87,7 +96,7 @@ Page({
               nxDuWxNickName: e.detail.userInfo.nickName,
               nxDuWxAvartraUrl: e.detail.userInfo.avatarUrl,
               nxDuCode:res.code,
-              nxDuAdmin: 0 ,
+              nxDuAdmin: this.data.role ,
               nxDuDepartmentId: this.data.nxDuDepartmentId
             }
             // this.setData({
@@ -100,7 +109,7 @@ Page({
                 console.log(res.result.data)
                 if (res.result.data) {
                   wx.reLaunch({
-                    url: '../../pagesOrder/rIndex/rIndex?userId=' + res.result.data.nxDepartmentUserId,
+                    url: '../../pagesOrder/rIndex/rIndex?userId=' + res.result.data.nxDepartmentUserId +'&depId=' + this.data.nxDuDepartmentId,
                   })
                 } else {
                   wx.showToast({

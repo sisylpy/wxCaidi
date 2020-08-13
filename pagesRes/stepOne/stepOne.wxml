@@ -8,8 +8,8 @@
 
 	<view class='with-padding with-margin-top' style='height: {{windowHeight - 340}}rpx; background:white;'>
 		<!-- 文字 -->
-		<view class='sub-title'>企业类型</view>
-		<view class='intro'>叮叮是生鲜采购多人协作订货的微信小程序。</view>
+		<view class='sub-title'>我是</view>
+		<!-- <view class='intro'>叮叮是生鲜采购多人协作订货的微信小程序。</view> -->
 		<view class='type'>
 			<radio-group class="radio-group" bindchange="radioChange">
 				<label class="radio" wx:for="{{items}}" wx:key="name">

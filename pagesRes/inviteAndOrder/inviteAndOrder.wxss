@@ -1,0 +1,28 @@
+
+
+.invite_page{
+  padding: 40rpx 60rpx;
+}
+.title{
+  padding: 40rpx 0;
+  text-align: center;
+}
+
+.middle_btn{
+  line-height: 90rpx;
+  background: lightgray;
+  text-align: center;
+
+}
+button.openOrder{
+  background: #529e9a;
+  color: #fff;
+}
+button.middle_btn {
+  border: none;
+  height: 90rpx;
+  padding: 0 0;
+  font-weight: 400;
+  
+
+}
